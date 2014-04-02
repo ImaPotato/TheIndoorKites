@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails TheIndoorKites: development" uuid="5f06a3c0-bb0a-429f-9254-ab53b6161e47">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails TheIndoorKites: test" uuid="87c73e13-c7b8-47b5-befe-3eae20c29f35">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails TheIndoorKites: production" uuid="8874fc10-c880-499c-aee7-38b6a5a492ea">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
