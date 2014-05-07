@@ -1,0 +1,22 @@
+<div class="login-form">
+  <div class = "header">
+    <h1>Log in</h1>
+    <span>Please enter your email and password.</span>
+  </div>
+
+  <%= form_tag sessions_path do %>
+      <div class="content">
+        <p>
+          <%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'email'%>
+        </p>
+        <p>
+          <%= password_field_tag :password, params[:password], :class => 'input', :placeholder => 'password'%>
+        </p>
+      </div>
+      <div class="footer">
+        <input type="submit" name="submit" value="Login" class="button" />
+      </div>
+
+  <% end %>
+
+</div>

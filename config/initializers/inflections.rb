@@ -14,3 +14,10 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'Mail', 'Mail'
+  inflect.irregular 'MailHistory', 'MailHistory'
+  inflect.irregular 'Company', 'Companies'
+  inflect.irregular 'CompanyHistory', 'CompanyHistory'
+end
