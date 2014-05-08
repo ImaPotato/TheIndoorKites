@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  to: MyString
+  from: MyString
+  weight: MyString
+  weight_cost: 9.99
+  volume_cost: 9.99
+  max_weight: 9.99
+  max: 
+  duration: 2014-05-08 15:22:02
+  frequency: 1
+  day: MyString
+  utilized: MyString
+  connection_id: 1
+
+two:
+  to: MyString
+  from: MyString
+  weight: MyString
+  weight_cost: 9.99
+  volume_cost: 9.99
+  max_weight: 9.99
+  max: 
+  duration: 2014-05-08 15:22:02
+  frequency: 1
+  day: MyString
+  utilized: MyString
+  connection_id: 1
