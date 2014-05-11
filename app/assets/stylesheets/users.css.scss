@@ -22,11 +22,11 @@ BODY STYLING
   padding: 50;
   border: none;
   outline: none;
+  font-family: Roboto, sans-serif;
 }
 
 body {
-  background: url('http://www.demo.amitjakhu.com/login-form/images/bg.png');
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  background-color: #DEDEDE;
   font-weight:300;
   text-align: left;
   text-decoration: none;
@@ -34,50 +34,6 @@ body {
 
 }
 
-#wrapper {
-  /* Center wrapper perfectly */
-  width: 300px;
-  height: 400px;
-  margin: 70px auto;
-}
-
-
-/*
-.gradient {
-	width: 600px;
-	height: 600px;
-	position: fixed;
-	left: 50%;
-	top: 50%;
-	margin-left: -300px;
-	margin-top: -300px;
-
-	background: url(http://www.demo.amitjakhu.com/login-form/images/gradient.png) no-repeat;
-}
-*/
-
-.gradient {
-  /* Center Positioning */
-  width: 600px;
-  height: 600px;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  margin-left: -300px;
-  margin-top: -300px;
-  z-index: -2;
-
-  /* Fallback */
-  background-image: url(http://www.demo.amitjakhu.com/login-form/images/gradient.png);
-  background-repeat: no-repeat;
-
-  /* CSS3 Gradient */
-  background-image: -webkit-gradient(radial, 0% 0%, 0% 100%, from(rgba(213,246,255,1)), to(rgba(213,246,255,0)));
-  background-image: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(213,246,255,1), rgba(213,246,255,0));
-  background-image: -moz-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
-  background-image: -ms-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
-  background-image: -o-radial-gradient(50% 50%, 50% 50%, rgba(213,246,255,1), rgba(213,246,255,0));
-}
 /*******************
 LOGIN FORM
 *******************/
@@ -85,17 +41,35 @@ LOGIN FORM
 .login-form {
   width: 100%;
   position: relative;
-  background: #565d64;
+  background: #137532;
   display: inline-block;
-  border-top: 30%;
-  top: 100px;
+  margin-top: 20%;
 }
 
 .login-form .title {
-  padding-top: 75px;
-  padding-left: 75px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  margin-left: 10%;
   width: 40%;
   float:left;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #fff;
+}
+
+#login-kelburn, #login-postal, #login-service {
+  font-weight: 400;
+  font-size: 60px;
+  letter-spacing: 8px;
+  line-height: 60px;
+}
+
+#login-postal {
+  letter-spacing: 19px;
+}
+
+#login-service {
+  letter-spacing: 13px;
 }
 
 /*******************
@@ -103,44 +77,50 @@ CONTENT
 *******************/
 
 .login-form .content {
-  padding: 0 30px 25px 30px;
+  margin: 35px 0px 35px 0px;
   float: right;
+  font-family: Roboto, sans-serif;
   width: 40%;
 }
 
+#login-desc {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
 .login-form .content .list-item{
-  padding: 0 30px 25px 30px;
+  padding: 0px 0px 0px 0px;
   list-style-type: none;
   display: block;
 }
 
 .login-form .content .button-div{
   position: relative;
-  left: 40px;
+  left: 108px;
 }
 
 .login-form .content .button-div .button{
-  width: 307px;
-  padding: 15px 25px 20px 20px;
-  //margin: 10px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  width: 200px;
+  padding: 5px 0px 5px 0px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #078F3B; 
+  border: 1px solid #056329;
 }
 
 /* Input field */
 .login-form .content .list-item .input {
-  width: 260px;
-  padding: 15px 25px 20px 20px;
-  margin: 10px;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  color: #9d9e9e;
+  width: 300px;
+  padding: 10px 0px 10px 5px;
+  margin: 0px 0px 20px 0px;
+  font-weight: 300;
+  font-size: 15px;
+  color: #9e9e9e;
+  font-style: italic;
   text-shadow: 1px 1px 0 rgba(255,255,255,1.0);
-
-  background: #fff;
-  border: 1px solid #fff;
+  border: 1px solid #056329;
 
 }
 
@@ -157,7 +137,7 @@ CONTENT
 .login-form .content .input:focus {
   background: #dfe9ec;
   color: #414848;
-
+  font-style: normal;
   box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
   -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);

@@ -3,14 +3,31 @@
 
 /* MAIN MENU STYLING */
 
+#top-menu {
+    width: 100%;
+}
+
+#menu-user-links {
+    float: right;
+}
+
 .pure-menu.pure-menu-open,
 .pure-menu.pure-menu-horizontal li .pure-menu-children {
-    background: #fff; /* Old browsers */
+    background: #137532; /* Old browsers */
     border: 1px solid #b7b7b7;
+    text-transform: uppercase;
+}
+
+.pure-menu.pure-menu-horizontal {
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #7A7A7A;
+    border-left: none;
+    border-right: none;
+    border-top: none;
 }
 
 /* remove borders for horizontal menus */
-.pure-menu.pure-menu-horizontal,
 .pure-menu.pure-menu-horizontal .pure-menu-heading {
     border: none;
 }
@@ -18,16 +35,15 @@
 
 /* LINK STYLES */
 
-.pure-menu a {
-    border: 1px solid transparent;
-    border-left: none;
-    border-right: none;
-
-}
 
 .pure-menu a,
 .pure-menu .pure-menu-can-have-children > li:after {
-    color: #777;
+    color: #000;
+    font-weight: 400;
+    font-size: 20px;
+    border: 1px solid transparent;
+    border-left: none;
+    border-right: none;
 }
 
 .pure-menu .pure-menu-can-have-children > li:hover:after {
@@ -42,7 +58,7 @@
 
 .pure-menu li a:hover,
 .pure-menu li a:focus {
-    background: #eee;
+    background: #1CAD4A;
 }
 
 /* DISABLED STATES */
@@ -65,9 +81,10 @@
 
 /* HEADINGS */
 .pure-menu .pure-menu-heading {
-    color: #565d64;
+    color: #fff;
     text-transform: uppercase;
-    font-size: 90%;
+    font-weight: 700;
+    font-size: 20px;
     margin-top: 0.5em;
     border-bottom-width: 1px;
     border-bottom-style: solid;

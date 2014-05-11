@@ -5,12 +5,13 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,300italic,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div  style = "padding-bottom:50px" style = "width:100%"> <!-- don't forgot to remove this -->
+<div  id="top-menu">
     <div id="header" class="pure-menu pure-menu-open pure-menu-horizontal">
         <%= link_to 'Kelburn Postal Service', homepage_path, class: "pure-menu-heading" %>
-        <ul>
+        <ul >
             <li>
                 <a href="#">Mail</a>
             </li>
@@ -23,8 +24,11 @@
             <li>
                 <a href="#">Pricing</a>
             </li>
+            <li>
+                <a href="#">Business</a>
+            </li>
           </ul>
-      <ul style = "float:right"> <!-- this needs to be removed as well; in-line is bad. -->
+      <ul id="menu-user-links">
             <% if current_user %>
                 <li>
                     <%= link_to 'Log out', log_out_path%>
