@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def redirect_to_homepage
     if is_logged_in
-      redirect_to sign_up_path #but really we want this to go to the homepage
+      redirect_to sign_up_path
     end
   end
 end
