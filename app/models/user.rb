@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else
-      nil
+      errors.add 'Email or Password is incorrect'
     end
   end
 

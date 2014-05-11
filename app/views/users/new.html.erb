@@ -1,46 +1,28 @@
 <div class="login-form">
-  <div class = "header">
-<h1>Sign up</h1>
-    <span>
-      Fill out this form to register for an account
-    </span>
-  </div>
 
+  <%= form_for @user do |f| %>
 
-
-<%= form_for @user do |f| %>
-      <div class="content">
-
-    <% if @user.errors.any? %>
-            <div class = "header">
-
+      <div class = "title">
+        <h1>Sign up</h1>
         <span>
-        <ul>
-            <% for message in @user.errors.full_messages %>
-            <li><%=message%></li>
-            <% end %>
+        Fill out this form to register for an account
+        </span>
+      </div>
+      <div class="content">
+        <ul class="list-item">
+          <li>
+            <%= f.text_field :email, :class => 'input', :placeholder => 'email'%>
+          </li>
+          <li>
+            <%= f.password_field :password, :class => 'input', :placeholder => 'password'%>
+          </li>
+          <li>
+            <%= f.password_field :password_confirmation, :class => 'input', :placeholder => 'password confirmation'%>
+          </li>
         </ul>
-            </span>
-
-            </div>
-    <% end %>
-
-    <p>
-      <%= f.text_field :email, :class => 'input', :placeholder => 'email'%>
-
-    </p>
-    <p>
-      <%= f.password_field :password, :class => 'input', :placeholder => 'password'%>
-    </p>
-    <p>
-      <%= f.password_field :password_confirmation, :class => 'input', :placeholder => 'password confirmation'%>
-    </p>
+        <div class = "button-div">
+          <%= f.submit :class => 'button'%>
+        </div>
       </div>
-
-      <div class="footer">
-    <p><%= f.submit :class => 'button'%></p>
-      </div>
-
-<% end %>
-    </div>
-
+  <% end %>
+</div>
