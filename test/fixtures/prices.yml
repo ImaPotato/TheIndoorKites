@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  i_air_weight_cost: 
+  i_air_volume_cost: 
+  i_land_weight_cost: 
+  i_land_volume_cost: 
+  d_air_weight_cost: 
+  d_air_volume_cost: 
+  d_land_weight_cost: 
+  d_land_volume_cost: 
+
+two:
+  i_air_weight_cost: 
+  i_air_volume_cost: 
+  i_land_weight_cost: 
+  i_land_volume_cost: 
+  d_air_weight_cost: 
+  d_air_volume_cost: 
+  d_land_weight_cost: 
+  d_land_volume_cost: 

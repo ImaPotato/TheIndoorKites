@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140508032256) do
+ActiveRecord::Schema.define(version: 20140512013614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(version: 20140508032256) do
     t.datetime "updated_at"
   end
 
-  create_table "company_history", force: true do |t|
-    t.string   "action"
-    t.datetime "date"
-    t.string   "user"
-    t.integer  "connection_id"
-  end
-
   create_table "mail", force: true do |t|
     t.string   "day"
     t.string   "to"
@@ -75,12 +68,17 @@ ActiveRecord::Schema.define(version: 20140508032256) do
     t.datetime "updated_at"
   end
 
-  create_table "mail_history", force: true do |t|
-    t.string   "action"
-    t.datetime "date"
-    t.string   "location"
-    t.string   "user"
-    t.integer  "tracking_number"
+  create_table "prices", force: true do |t|
+    t.decimal  "i_air_weight_cost"
+    t.decimal  "i_air_volume_cost"
+    t.decimal  "i_land_weight_cost"
+    t.decimal  "i_land_volume_cost"
+    t.decimal  "d_air_weight_cost"
+    t.decimal  "d_air_volume_cost"
+    t.decimal  "d_land_weight_cost"
+    t.decimal  "d_land_volume_cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
