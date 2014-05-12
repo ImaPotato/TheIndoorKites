@@ -2,13 +2,14 @@ TheIndoorKites::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
-  get "homepage" => "sessions#redirect_to_homepage", :as => "homepage"
+  get "homepage" => "company#new", :as => "homepage"
 
 
   root :to => "users#new"
+
   resources :users
   resources :sessions
-
+  resources :companies
 
 
   # The priority is based upon order of creation: first created -> highest priority.
