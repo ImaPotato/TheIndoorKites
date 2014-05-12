@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20140508032256) do
   enable_extension "plpgsql"
 
   create_table "companies", force: true do |t|
+    t.string   "company"
     t.string   "to"
     t.string   "from"
-    t.string   "weight"
+#    t.string   "weight"
     t.decimal  "weight_cost"
     t.decimal  "volume_cost"
     t.decimal  "max_weight"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140508032256) do
     t.integer  "frequency"
     t.string   "day"
     t.string   "utilized"
+    t.string   "priority"
     t.integer  "connection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -42,12 +44,12 @@ ActiveRecord::Schema.define(version: 20140508032256) do
     t.datetime "updated_at"
   end
 
-  create_table "company_history", force: true do |t|
-    t.string   "action"
-    t.datetime "date"
-    t.string   "user"
-    t.integer  "connection_id"
-  end
+#  create_table "company_history", force: true do |t|
+#    t.string   "action"
+#    t.datetime "date"
+#    t.string   "user"
+#    t.integer  "connection_id"
+#  end
 
   create_table "mail", force: true do |t|
     t.string   "day"
@@ -75,13 +77,13 @@ ActiveRecord::Schema.define(version: 20140508032256) do
     t.datetime "updated_at"
   end
 
-  create_table "mail_history", force: true do |t|
-    t.string   "action"
-    t.datetime "date"
-    t.string   "location"
-    t.string   "user"
-    t.integer  "tracking_number"
-  end
+#  create_table "mail_history", force: true do |t|
+#    t.string   "action"
+#    t.datetime "date"
+#    t.string   "location"
+#    t.string   "user"
+#    t.integer  "tracking_number"
+#  end
 
   create_table "users", force: true do |t|
     t.string   "email"
