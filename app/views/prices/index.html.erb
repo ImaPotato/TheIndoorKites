@@ -1,0 +1,33 @@
+<%= form_for :prices, url: prices_path ,html: {:class => "pure-form"} do |f| %>
+<div>
+	<ul>
+		<li>International
+			<ul>
+				<li>Air</li>
+				<li>Land/Sea</li>
+			</ul>
+		</li>
+		<li>Domestic
+			<ul>
+				<li>Air</li>
+				<li>Land/Sea</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+<div>
+	<fieldset id = "international" >
+		<%= f.text_field :i_air_weight_cost, :placeholder => '$ per kg'%> 
+		<%= f.text_field :i_air_volume_cost, :placeholder => '$ per cubic cm'%>
+		<%= f.text_field :i_land_weight_cost, :placeholder => '$ per kg'%> 
+		<%= f.text_field :i_land_volume_cost, :placeholder => '$ per cubic cm'%>
+		</fieldset>
+		<fieldset id = "domestic" >
+		<%= f.text_field :d_air_weight_cost, :placeholder => '$ per kg'%> 
+		<%= f.text_field :d_air_volume_cost, :placeholder => '$ per cubic cm'%>
+		<%= f.text_field :d_land_weight_cost, :placeholder => '$ per kg'%> 
+		<%= f.text_field :d_land_volume_cost, :placeholder => '$ per cubic cm'%>
+	</fieldset>
+	<p> <%= f.submit %> </p>
+</div>
+<%end%>

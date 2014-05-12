@@ -1,13 +1,15 @@
-TheIndoorKites::Application.routes.draw do
+ TheIndoorKites::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "homepage" => "sessions#redirect_to_homepage", :as => "homepage"
-
+  #get "prices" => "prices#index", :as => "prices"
+  get "prices" => "prices#index", :as => "prices"
 
   root :to => "users#new"
   resources :users
   resources :sessions
+  resources :prices
 
 
 

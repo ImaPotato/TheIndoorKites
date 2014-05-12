@@ -67,7 +67,8 @@ ActiveRecord::Schema.define(version: 20140512013614) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
+  #the i here refers to international priority
+  # the d here refers to domestic priority
   create_table "prices", force: true do |t|
     t.decimal  "i_air_weight_cost"
     t.decimal  "i_air_volume_cost"
