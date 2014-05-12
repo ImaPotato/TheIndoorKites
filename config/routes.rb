@@ -3,9 +3,10 @@ TheIndoorKites::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
   get "homepage" => "sessions#new", :as => "homepage"
-  get "transport_firm" => "companies#new", :as => "transport_firm"
+  get "transport_firm" => "companies#index", :as => "transport_firm"
 
   root :to => "users#new"
+  #root :to => "companies#index"
 
   resources :users
   resources :sessions

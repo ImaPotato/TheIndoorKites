@@ -1,0 +1,17 @@
+
+
+<%= form_tag(@company, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= submit_tag "Search" %>
+<% end %>
+<!-- change this to a list of buttons, which will populate
+the LHS and allow for it to be edited -->
+<% @companies.each do |c|%>
+    <ul>
+      <li>
+        <%= c[:company] %>
+      </li>
+    </ul>
+<% end %>
+
+<!-- for each company in companies add to table -->
