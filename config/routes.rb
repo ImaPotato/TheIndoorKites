@@ -4,7 +4,8 @@ TheIndoorKites::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "homepage" => "sessions#new", :as => "homepage"
   get "transport_firm" => "companies#index", :as => "transport_firm"
-
+  get "remove_transfer_firm" => "companies#destroy", :as => "remove_transfer_firm"
+  get "transfer_firm" => "companies#index", :via => :get
   root :to => "users#new"
   #root :to => "companies#index"
 

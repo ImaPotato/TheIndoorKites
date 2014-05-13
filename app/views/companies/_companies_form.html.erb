@@ -30,7 +30,10 @@
           <%= submit_tag "add" %>
         </fieldset>
       </div>
-
     </div>
    <!-- <button id="submit">add new connection</button> -->
 <%end%>
+
+<%= form_for(@company, :html => { :method => :delete, :remote => true }) do |f| %>
+    <%= submit_tag "delete" %>
+<% end %>
