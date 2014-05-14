@@ -1,0 +1,36 @@
+<div class="mail-form">
+  <%= form_tag mail_path do %>
+
+      <div class = "title">
+        <h1 id="process-heading">process mail</h1>
+      </div>
+
+      <table class="mail-form-table">
+        <tr class="mail-content">
+          <td class="mail-item">Recipient</td>
+          <td class="mail-item"><%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'Recipient'%></td>
+        </tr>
+        <tr class="mail-content">
+          <td class="mail-item">Origin</td>
+          <td class="mail-item"><%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'Origin'%></td>
+        </tr>
+        <tr class="mail-content">
+          <td class="mail-item">Destination</td>
+          <td class="mail-item"><%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'Destination'%></td>
+        </tr>
+        <tr class="mail-content">
+          <td class="mail-item">Priority</td>
+          <td class="mail-item"><%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'Priority'%></td>
+        </tr>
+        <tr class="mail-content">
+          <td class="mail-item">Weight</td>
+          <td class="mail-item"><%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'Weight'%></td>
+        </tr>
+        <tr class="mail-content">
+          <td class="mail-item">Volume</td>
+          <td class="mail-item"><%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'Volume'%></td>
+        </tr>
+      </table>
+
+  <% end %>
+</div>

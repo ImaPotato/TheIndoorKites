@@ -1,2 +1,3 @@
 class MailController < ApplicationController
+	
 end

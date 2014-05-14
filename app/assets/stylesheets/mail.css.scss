@@ -1,3 +1,89 @@
 // Place all the styles related to the Mail controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mail-form {
+  width: 50%;
+  position: relative;
+  background: #fff;
+  display: inline-block;
+  margin: 5% 20% 5% 20%;
+  border-bottom: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #7A7A7A;
+  border-left: none;
+  border-right: none;
+  border-top: none; 
+}
+
+.mail-form .title {
+  margin-left: 10%;
+  text-transform: uppercase;
+}
+
+#process-heading {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 40px;
+  color: #000;
+}
+
+.mail-form-table {
+  margin: 25px 0px 35px 35px;
+  font-family: Roboto, sans-serif;
+}
+
+.mail-form-table .mail-content {
+	height: 75px;
+}
+
+.mail-form-table .mail-content .mail-item {
+  text-transform: uppercase;
+  width: 200px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.mail-form .mail-content .button-div{
+  position: relative;
+  left: 108px;
+}
+
+.mail-form-table .mail-content .button-div .button{
+  width: 200px;
+  padding: 5px 0px 5px 0px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #078F3B; 
+  border: 1px solid #056329;
+}
+
+/* Input field */
+.mail-form-table .mail-content .mail-item .input{
+  width: 300px;
+  padding: 10px 0px 10px 5px;
+  margin: 0px 0px 20px 0px;
+  font-weight: 300;
+  font-size: 15px;
+  color: #9e9e9e;
+  font-style: italic;
+  text-shadow: 1px 1px 0 rgba(255,255,255,1.0);
+  border: 1px solid #7A7A7A;
+
+}
+
+.mail-form-table .mail-content .mail-item .input:hover {
+  background: #dfe9ec;
+  color: #414848;
+}
+
+.mail-form-table .mail-content .mail-item .input:focus {
+  background: #dfe9ec;
+  color: #414848;
+  font-style: normal;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}
