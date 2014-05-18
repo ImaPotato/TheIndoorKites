@@ -83,7 +83,7 @@ class CompaniesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def company_params
       params.require(:company).permit(:company_name, connections_attributes:
-          [:id, :location_one, :location_two, :weight_cost, :volume_cost, :max_weight, :max_volume, :duration, :frequency, :priority, :day, :utilised, locations_attributes: [:id, :name]
+          [:id, :_destroy, :location_one, :location_two, :weight_cost, :volume_cost, :max_weight, :max_volume, :duration, :frequency, :priority, :day, :utilised, locations_attributes: [:id, :name]
           ]
       )
     end
