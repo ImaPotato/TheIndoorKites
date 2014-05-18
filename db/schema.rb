@@ -11,22 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518025005) do
+ActiveRecord::Schema.define(version: 20140518032218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: true do |t|
     t.string   "company_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "company_histories", force: true do |t|
-    t.string   "action"
-    t.datetime "date"
-    t.string   "user"
-    t.integer  "connection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,27 +47,20 @@ ActiveRecord::Schema.define(version: 20140518025005) do
   end
 
   create_table "mail", force: true do |t|
-    t.string   "day"
+    t.string   "sender"
+    t.string   "receiver"
     t.string   "to"
     t.string   "from"
+    t.string   "day"
     t.decimal  "weight"
-    t.integer  "volume"
+    t.decimal  "volume"
     t.string   "priority"
-    t.datetime "send_date"
-    t.datetime "receive_date"
-    t.time     "max_delivery_time"
+    t.date     "send_date"
+    t.date     "receive_date"
+    t.date     "max_delivery_time"
     t.decimal  "cost"
-    t.integer  "tracking_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "mail_histories", force: true do |t|
-    t.string   "action"
-    t.datetime "date"
-    t.string   "location"
-    t.string   "user"
-    t.integer  "tracking_number"
+    t.string   "current_location"
+    t.boolean  "international"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

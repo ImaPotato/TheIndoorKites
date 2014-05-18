@@ -1,5 +1,7 @@
 TheIndoorKites::Application.routes.draw do
 
+  resources :mail
+
   resources :prices
 
   get "log_in" => "sessions#new", :as => "log_in"
@@ -7,6 +9,8 @@ TheIndoorKites::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "homepage" => "sessions#new", :as => "homepage"
   get "companies" => "companies#index", :as => "companies"
+  get "mail" => "mail#index", :as => "mail_page"
+
   root :to => "users#new"
 
   resources :companies

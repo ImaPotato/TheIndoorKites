@@ -1,0 +1,72 @@
+<%= form_for(@mail) do |f| %>
+  <% if @mail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mail.errors.count, "error") %> prohibited this mail from being saved:</h2>
+
+      <ul>
+        <% @mail.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :sender %><br>
+      <%= f.text_field :sender %>
+    </div>
+    <div class="field">
+      <%= f.label :receiver %><br>
+      <%= f.text_field :receiver %>
+    </div>
+    <div class="field">
+      <%= f.label :to %><br>
+      <%= f.collection_select :to, Location.all, :name, :name, :include_blank => 'Select the start point' %>
+    </div>
+    <div class="field">
+      <%= f.label :from %><br>
+    <%= f.collection_select :from, Location.all, :name, :name, :include_blank => 'Select the end point' %>
+  </div>
+    <%= f.label :international, "International" %>
+    <br/>
+    <%= f.check_box :international %>
+    <br />
+  <div class="field">
+    <%= f.label :day %><br>
+    <%= f.text_field :day %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br>
+    <%= f.text_field :priority %>
+  </div>
+  <div class="field">
+    <%= f.label :send_date %><br>
+    <%= f.date_select :send_date %>
+  </div>
+    <% if !@mail.new_record? %>
+  <div class="field">
+    <%= f.label :receive_date %><br>
+    <%= f.date_select :receive_date %>
+  </div>
+        <% end %>
+  <div class="field">
+    <%= f.label :max_delivery_time %><br>
+    <%= f.date_select :max_delivery_time %>
+  </div>
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost, :readonly => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <!-- create button which will calculate the current expected price -->
+  </div>
+<% end %>
