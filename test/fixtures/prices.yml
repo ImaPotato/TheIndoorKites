@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  i_air_w_cost: 9.99
+  i_air_v_cost: 9.99
+  i_land_w_cost: 9.99
+  i_land_v_cost: 9.99
+  d_air_w_cost: 9.99
+  d_air_v_cost: 9.99
+  d_land_w_cost: 9.99
+  d_land_v_cost: 9.99
+
+two:
+  i_air_w_cost: 9.99
+  i_air_v_cost: 9.99
+  i_land_w_cost: 9.99
+  i_land_v_cost: 9.99
+  d_air_w_cost: 9.99
+  d_air_v_cost: 9.99
+  d_land_w_cost: 9.99
+  d_land_v_cost: 9.99

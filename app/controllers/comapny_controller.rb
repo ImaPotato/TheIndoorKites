@@ -1,2 +1,0 @@
-class ComapnyController < ApplicationController
-end

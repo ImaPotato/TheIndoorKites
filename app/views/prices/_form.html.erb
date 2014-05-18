@@ -1,0 +1,49 @@
+<%= form_for(@price) do |f| %>
+  <% if @price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@price.errors.count, "error") %> prohibited this price from being saved:</h2>
+
+      <ul>
+      <% @price.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :i_air_w_cost %><br>
+    <%= f.text_field :i_air_w_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :i_air_v_cost %><br>
+    <%= f.text_field :i_air_v_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :i_land_w_cost %><br>
+    <%= f.text_field :i_land_w_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :i_land_v_cost %><br>
+    <%= f.text_field :i_land_v_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :d_air_w_cost %><br>
+    <%= f.text_field :d_air_w_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :d_air_v_cost %><br>
+    <%= f.text_field :d_air_v_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :d_land_w_cost %><br>
+    <%= f.text_field :d_land_w_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :d_land_v_cost %><br>
+    <%= f.text_field :d_land_v_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140517032617) do
+ActiveRecord::Schema.define(version: 20140518025005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: true do |t|
     t.string   "company_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "company_histories", force: true do |t|
+    t.string   "action"
+    t.datetime "date"
+    t.string   "user"
+    t.integer  "connection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -42,6 +51,45 @@ ActiveRecord::Schema.define(version: 20140517032617) do
   create_table "locations", force: true do |t|
     t.string   "name"
     t.integer  "connection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mail", force: true do |t|
+    t.string   "day"
+    t.string   "to"
+    t.string   "from"
+    t.decimal  "weight"
+    t.integer  "volume"
+    t.string   "priority"
+    t.datetime "send_date"
+    t.datetime "receive_date"
+    t.time     "max_delivery_time"
+    t.decimal  "cost"
+    t.integer  "tracking_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mail_histories", force: true do |t|
+    t.string   "action"
+    t.datetime "date"
+    t.string   "location"
+    t.string   "user"
+    t.integer  "tracking_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "prices", force: true do |t|
+    t.decimal  "i_air_w_cost"
+    t.decimal  "i_air_v_cost"
+    t.decimal  "i_land_w_cost"
+    t.decimal  "i_land_v_cost"
+    t.decimal  "d_air_w_cost"
+    t.decimal  "d_air_v_cost"
+    t.decimal  "d_land_w_cost"
+    t.decimal  "d_land_v_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
