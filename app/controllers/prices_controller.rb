@@ -30,7 +30,6 @@ class PricesController < ApplicationController
   # POST /prices
   def create
     @price = Price.new(price_params)
-
     respond_to do |format|
       if @price.save
         format.html { redirect_to @price, notice: 'Price was successfully created.' }
@@ -42,9 +41,9 @@ class PricesController < ApplicationController
 
   # PATCH/PUT /prices/1
   def update
-    price = Price.new(price_params)
+    @price = Price.new(price_params)
     respond_to do |format|
-      if price.save
+      if @price.save
         format.html { redirect_to @price, notice: 'Price was successfully updated.' }
       else
         format.html { render action: 'edit' }
