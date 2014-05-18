@@ -4,12 +4,15 @@ class PricesController < ApplicationController
   # GET /prices
   # GET /prices.json
   def index
-    @prices = Price.all
+    @prices = Price.last
   end
 
   # GET /prices/1
   # GET /prices/1.json
   def show
+    @price = Price.last
+    redirect_to prices_path
+   #
   end
 
   # GET /prices/new
@@ -19,6 +22,7 @@ class PricesController < ApplicationController
 
   # GET /prices/1/edit
   def edit
+    @price = Price.last
   end
 
   # POST /prices
@@ -29,10 +33,8 @@ class PricesController < ApplicationController
     respond_to do |format|
       if @price.save
         format.html { redirect_to @price, notice: 'Price was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @price }
       else
         format.html { render action: 'new' }
-        format.json { render json: @price.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,8 +42,9 @@ class PricesController < ApplicationController
   # PATCH/PUT /prices/1
   # PATCH/PUT /prices/1.json
   def update
+    price = Price.new(price_params)
     respond_to do |format|
-      if @price.update(price_params)
+      if price.save
         format.html { redirect_to @price, notice: 'Price was successfully updated.' }
         format.json { head :no_content }
       else

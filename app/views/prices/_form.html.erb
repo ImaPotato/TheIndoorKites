@@ -11,38 +11,59 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :i_air_w_cost %><br>
-    <%= f.text_field :i_air_w_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :i_air_v_cost %><br>
-    <%= f.text_field :i_air_v_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :i_land_w_cost %><br>
-    <%= f.text_field :i_land_w_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :i_land_v_cost %><br>
-    <%= f.text_field :i_land_v_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :d_air_w_cost %><br>
-    <%= f.text_field :d_air_w_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :d_air_v_cost %><br>
-    <%= f.text_field :d_air_v_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :d_land_w_cost %><br>
-    <%= f.text_field :d_land_w_cost %>
-  </div>
-  <div class="field">
-    <%= f.label :d_land_v_cost %><br>
-    <%= f.text_field :d_land_v_cost %>
-  </div>
+
+  <table>
+    <th>International</th>
+    <tr>
+      <td>
+        <%= f.label "Air Weight Cost" %>
+        <%= f.text_field :i_air_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Air Volume Cost" %>
+        <%= f.text_field :i_air_v_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Weight Cost" %>
+        <%= f.text_field :i_land_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Volume Cost" %>
+        <%= f.text_field :i_land_v_cost %>
+      </td>
+    </tr>
+    <th>Domestic</th>
+    <tr>
+      <td>
+        <%= f.label "Air Weight Cost" %>
+        <%= f.text_field :d_air_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Air Volume Cost" %>
+        <%= f.text_field :d_air_v_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Weight Cost" %>
+        <%= f.text_field :d_land_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Volume Cost" %>
+        <%= f.text_field :d_land_v_cost %>
+      </td>
+    </tr>
+  </table>
   <div class="actions">
     <%= f.submit %>
   </div>
