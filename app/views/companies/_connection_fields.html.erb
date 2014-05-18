@@ -1,0 +1,68 @@
+<fieldset>
+  <%= f.label :location_one, "Location One" %>
+  <br/>
+  <% if f.object.new_record? %>
+      <%= f.text_field :location_one %>
+      <br/>
+      <% if Location.all.any? %>
+          <p> or select from: </p> <br/>
+          <%= f.collection_select :location_one, Location.all, :name, :name, :include_blank => 'Select a location' %>
+          <br/>
+      <% end %>
+  <% else %>
+      <%= f.text_field :location_one, :readonly => true %>
+      <br/>
+  <% end %>
+
+  <%= f.label :location_two, "Location Two" %>
+  <br/>
+  <% if f.object.new_record? %>
+      <%= f.text_field :location_two %>
+      <br/>
+      <% if Location.all.any? %>
+          <p> or select from: </p> <br/>
+          <%= f.collection_select :location_two, Location.all, :name, :name, :include_blank => 'Select a location' %>
+          <br/>
+      <% end %>
+  <% else %>
+      <%= f.text_field :location_two, :readonly => true %>
+      <br/>
+  <% end %>
+  <%= f.label :weight_cost, "Weight Cost" %>
+  <br/>
+  <%= f.text_field :weight_cost %>
+  <br/>
+  <%= f.label :volume_cost, "Volume Cost" %>
+  <br/>
+  <%= f.text_field :volume_cost %>
+  <br/>
+  <%= f.label :max_weight, "Max Weight" %>
+  <br/>
+  <%= f.text_field :max_weight %>
+  <br/>
+  <%= f.label :max_volume, "Max Volume" %>
+  <br/>
+  <%= f.text_field :max_volume %>
+  <br/>
+  <%= f.label :duration, "Duration" %>
+  <br/>
+  <%= f.text_field :duration %>
+  <br/>
+  <%= f.label :frequency, "Frequency" %>
+  <br/>
+  <%= f.text_field :frequency %>
+  <br/>
+  <%= f.label :priority, "Priority" %>
+  <br/>
+  <%= f.text_field :priority %>
+  <br/>
+  <%= f.label :day, "Day" %>
+  <br/>
+  <%= f.text_field :day %>
+  <br/>
+  <%= f.label :utilised, "Utilised" %>
+  <br/>
+  <%= f.check_box :utilised %>
+  <br/>
+</fieldset>
+

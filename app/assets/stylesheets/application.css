@@ -9,5 +9,15 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require fancybox
  *= require_tree .
  */
+
+.header-cont {
+    height:50px;
+    background:#F0F0F0;
+    border:1px solid #CCC;
+    width: 100%;
+    margin:0px auto;
+}
+

@@ -1,0 +1,24 @@
+<div class="login-form">
+  <%= form_tag sessions_path do %>
+
+      <div class = "title">
+        <h1 id="login-kelburn" >kelburn</h1>
+        <h1 id="login-postal" >postal</h1>
+        <h1 id="login-service" >service</h1>
+      </div>
+      <div class="content">
+        <ul class="list-item">
+          <li id="login-desc"> <a>To login, enter your email and password</a></li>
+          <li>
+             <%= text_field_tag :email, params[:email], :class => 'input', :placeholder => 'email'%>
+          </li>
+          <li>
+             <%= password_field_tag :password, params[:password], :class => 'input', :placeholder => 'password'%>
+          </li>
+        </ul>
+        <div class = "button-div">
+          <input type="submit" name="submit" value="Login" class="button" />
+        </div>
+      </div>
+  <% end %>
+</div>

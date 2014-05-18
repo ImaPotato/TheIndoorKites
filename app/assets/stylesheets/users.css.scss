@@ -1,0 +1,158 @@
+// css is stolen from http://cssdeck.com/labs/amazing-css3-login-form (just pinched it for now so the pages don't look repulsive)
+
+/*******************
+SELECTION STYLING
+*******************/
+
+::selection {
+  color: #fff;
+  background: #f676b2; /* Safari */
+}
+::-moz-selection {
+  color: #fff;
+  background: #f676b2; /* Firefox */
+}
+
+/*******************
+BODY STYLING
+*******************/
+
+* {
+  margin: 0;
+  padding: 50;
+  border: none;
+  outline: none;
+  font-family: Roboto, sans-serif;
+}
+
+body {
+  background-color: #DEDEDE;
+  font-weight:300;
+  text-align: left;
+  text-decoration: none;
+  height: 500px;
+
+}
+
+/*******************
+LOGIN FORM
+*******************/
+
+.login-form {
+  width: 100%;
+  position: relative;
+  background: #137532;
+  display: inline-block;
+  margin-top: 20%;
+}
+
+.login-form .title {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  margin-left: 10%;
+  width: 40%;
+  float:left;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #fff;
+}
+
+#login-kelburn, #login-postal, #login-service {
+  font-weight: 400;
+  font-size: 60px;
+  letter-spacing: 8px;
+  line-height: 60px;
+}
+
+#login-postal {
+  letter-spacing: 19px;
+}
+
+#login-service {
+  letter-spacing: 13px;
+}
+
+/*******************
+CONTENT
+*******************/
+
+.login-form .content {
+  margin: 35px 0px 35px 0px;
+  float: right;
+  font-family: Roboto, sans-serif;
+  width: 40%;
+}
+
+#login-desc {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.login-form .content .list-item{
+  padding: 0px 0px 0px 0px;
+  list-style-type: none;
+  display: block;
+}
+
+.login-form .content .button-div{
+  position: relative;
+  left: 108px;
+}
+
+.login-form .content .button-div .button{
+  width: 200px;
+  padding: 5px 0px 5px 0px;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #078F3B; 
+  border: 1px solid #056329;
+}
+
+/* Input field */
+.login-form .content .list-item .input {
+  width: 300px;
+  padding: 10px 0px 10px 5px;
+  margin: 0px 0px 20px 0px;
+  font-weight: 300;
+  font-size: 15px;
+  color: #9e9e9e;
+  font-style: italic;
+  text-shadow: 1px 1px 0 rgba(255,255,255,1.0);
+  border: 1px solid #056329;
+
+}
+
+/* Second input field */
+.login-form .content .password, .login-form .content .pass-icon {
+  margin-top: 25px;
+}
+
+.login-form .content .input:hover {
+  background: #dfe9ec;
+  color: #414848;
+}
+
+.login-form .content .input:focus {
+  background: #dfe9ec;
+  color: #414848;
+  font-style: normal;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+}
+
+
+.content input:focus + div{
+  left: -46px;
+}
+
+/* Animation */
+.input, .user-icon, .pass-icon, .button, .register {
+  transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+}

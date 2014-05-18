@@ -1,0 +1,51 @@
+<%= form_for(@company) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :company_name %><br>
+<% if @company.new_record? %>
+    <%= f.text_field :company_name %>
+        <% else %>
+        <%= f.text_field :company_name, :readonly => true  %>
+        <% end %>
+  </div>
+   <%= f.fields_for :connections do |builder| %>
+        <%= render 'connection_fields', :f => builder %>
+   <% end %>
+    <p><%= link_to_add_fields "Add Connection", f, :connections %></p>
+    <div style="display: none">
+
+    </div>
+
+    <button id="open_lightbox">submit</button>
+  <div class="actions" style="display: none">
+    <%= link_to "Show mah Fancybox!", "#lightbox_submit", class: "fancybox", id: 'fan' %>
+    <div id="lightbox_submit">
+      <button id="submit_form">submit</button>
+    </div>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#open_lightbox').click(function(){
+            $('#fan').click();
+            return false;
+        });
+        $('#submit_form').click(function(){
+            $('form').submit();
+        });
+    });
+
+</script>
+
+

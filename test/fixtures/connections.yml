@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_id: 1
+  location_one: 1
+  location_two: 1
+  weight_cost: 9.99
+  volume_cost: 9.99
+  max_weight: 9.99
+  max_volume: 9.99
+  duration: 1
+  frequency: 1
+  priority: MyString
+  day: MyString
+  utilised: false
+
+two:
+  company_id: 1
+  location_one: 1
+  location_two: 1
+  weight_cost: 9.99
+  volume_cost: 9.99
+  max_weight: 9.99
+  max_volume: 9.99
+  duration: 1
+  frequency: 1
+  priority: MyString
+  day: MyString
+  utilised: false

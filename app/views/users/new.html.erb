@@ -1,0 +1,25 @@
+<div class="login-form">
+  <%= form_for @user do |f| %>
+      <div class = "title">
+        <h1 id="login-kelburn" >kelburn</h1>
+        <h1 id="login-postal" >postal</h1>
+        <h1 id="login-service" >service</h1>
+      </div>
+      <div class="content">
+        <ul class="list-item">
+          <li>
+            <%= f.text_field :email, :class => 'input', :placeholder => 'email'%>
+          </li>
+          <li>
+            <%= f.password_field :password, :class => 'input', :placeholder => 'password'%>
+          </li>
+          <li>
+            <%= f.password_field :password_confirmation, :class => 'input', :placeholder => 'password confirmation'%>
+          </li>
+        </ul>
+        <div class = "button-div">
+          <%= f.submit :class => 'button'%>
+        </div>
+      </div>
+  <% end %>
+</div>
