@@ -10,6 +10,7 @@ TheIndoorKites::Application.routes.draw do
   get "homepage" => "sessions#new", :as => "homepage"
   get "companies" => "companies#index", :as => "companies"
   get "mail" => "mail#index", :as => "mail_page"
+  get "business" => "business#index", :as => "business"
 
   root :to => "users#new"
 
