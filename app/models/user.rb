@@ -18,13 +18,13 @@ class User < ActiveRecord::Base
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else
-      errors.add 'Email or Password is incorrect'
+      #errors.add 'Email or Password is incorrect'
     end
   end
 
   def email_regex
     if not email.match(/\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/)
-      errors.add :email, 'Please enter a valid email address'
+      #errors.add :email, 'Please enter a valid email address'
     end
   end
 

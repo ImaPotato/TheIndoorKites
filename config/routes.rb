@@ -1,16 +1,22 @@
 TheIndoorKites::Application.routes.draw do
+
+  resources :mail
+
+  resources :prices
+
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
-  get "homepage" => "sessions#redirect_to_homepage", :as => "homepage"
-  get "connection" => "company#connection", :as => "connection"
+  get "homepage" => "sessions#new", :as => "homepage"
+  get "companies" => "companies#index", :as => "companies"
+  get "mail" => "mail#index", :as => "mail_page"
 
   root :to => "users#new"
+
+  resources :companies
   resources :users
   resources :sessions
-
-
-
+  resources :companies
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

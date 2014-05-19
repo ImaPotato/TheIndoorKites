@@ -1,0 +1,70 @@
+<%= form_for(@price) do |f| %>
+  <% if @price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@price.errors.count, "error") %> prohibited this price from being saved:</h2>
+
+      <ul>
+      <% @price.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <table>
+    <th>International</th>
+    <tr>
+      <td>
+        <%= f.label "Air Weight Cost" %>
+        <%= f.text_field :i_air_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Air Volume Cost" %>
+        <%= f.text_field :i_air_v_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Weight Cost" %>
+        <%= f.text_field :i_land_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Volume Cost" %>
+        <%= f.text_field :i_land_v_cost %>
+      </td>
+    </tr>
+    <th>Domestic</th>
+    <tr>
+      <td>
+        <%= f.label "Air Weight Cost" %>
+        <%= f.text_field :d_air_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Air Volume Cost" %>
+        <%= f.text_field :d_air_v_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Weight Cost" %>
+        <%= f.text_field :d_land_w_cost %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.label "Land Volume Cost" %>
+        <%= f.text_field :d_land_v_cost %>
+      </td>
+    </tr>
+  </table>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

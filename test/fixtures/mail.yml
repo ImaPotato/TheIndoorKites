@@ -1,27 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  day: MyString
   to: MyString
   from: MyString
+  day: MyString
   weight: 9.99
-  volume: 1
+  volume: 9.99
   priority: MyString
-  send_date: 2014-05-02 08:54:15
-  receive_date: 2014-05-02 08:54:15
-  max_delivery_time: 2014-05-02 08:54:15
+  send_date: 2014-05-18 15:22:18
+  receive_date: 
+  max_delivery_time: 2014-05-18 15:22:18
   cost: 9.99
-  tracking_number: 1
+  current_location: MyString
 
 two:
-  day: MyString
   to: MyString
   from: MyString
+  day: MyString
   weight: 9.99
-  volume: 1
+  volume: 9.99
   priority: MyString
-  send_date: 2014-05-02 08:54:15
-  receive_date: 2014-05-02 08:54:15
-  max_delivery_time: 2014-05-02 08:54:15
+  send_date: 2014-05-18 15:22:18
+  receive_date: 
+  max_delivery_time: 2014-05-18 15:22:18
   cost: 9.99
-  tracking_number: 1
+  current_location: MyString
