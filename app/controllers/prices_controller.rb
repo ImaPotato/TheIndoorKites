@@ -4,6 +4,7 @@ class PricesController < ApplicationController
   # GET /prices
   # GET /prices.json
   def index
+    is_logged_in
     @prices = Price.last
     if @prices.nil? 
       @prices = Price.new
@@ -13,22 +14,26 @@ class PricesController < ApplicationController
   # GET /prices/
   # GET /prices/
   def show
+    is_logged_in
     @price = Price.last
     redirect_to prices_path
   end
 
   # GET /prices/new
   def new
+    is_logged_in
     @price = Price.new
   end
 
   # GET /prices/1/edit
   def edit
+    is_logged_in
     @price = Price.last
   end
 
   # POST /prices
   def create
+    is_logged_in
     @price = Price.new(price_params)
     respond_to do |format|
       if @price.save
@@ -41,6 +46,7 @@ class PricesController < ApplicationController
 
   # PATCH/PUT /prices/1
   def update
+    is_logged_in
     @price = Price.new(price_params)
     respond_to do |format|
       if @price.save
@@ -54,6 +60,7 @@ class PricesController < ApplicationController
   # DELETE /prices/1
   # this should probably never be called
   def destroy
+    is_logged_in
     @price.destroy
     respond_to do |format|
       format.html { redirect_to prices_url }
