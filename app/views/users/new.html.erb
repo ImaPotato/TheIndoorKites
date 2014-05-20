@@ -20,6 +20,12 @@
         <div class = "button-div">
           <%= f.submit :class => 'button'%>
         </div>
+        <!--- Only show the manager button to a manager -->
+        <% if @user.is_manager %>
+          <div class = "button-div">
+            <%= f.submit 'Create Manager', :class => 'button'%>
+          </div>
+        <% end %>
       </div>
   <% end %>
 </div>
