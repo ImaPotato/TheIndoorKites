@@ -7,11 +7,11 @@ TheIndoorKites::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "sign_up" => "users#new", :as => "sign_up"
-  get "homepage" => "sessions#new", :as => "homepage"
+  get "homepage" => "home#index", :as => "homepage"
   get "companies" => "companies#index", :as => "companies"
   get "mail" => "mail#index", :as => "mail_page"
 
-  root :to => "users#new"
+  root :to => "home#index"
 
   resources :companies
   resources :users
