@@ -1,5 +1,5 @@
 <div class="login-form">
-  <%= form_for @user do |f| %>
+  <%= form_for @new_user do |f| %>
       <div class = "title">
         <h1 id="login-kelburn" >kelburn</h1>
         <h1 id="login-postal" >postal</h1>
@@ -20,6 +20,12 @@
         <div class = "button-div">
           <%= f.submit :class => 'button'%>
         </div>
+        <!--- Only show the manager button to a manager -->
+        <% if !@user.nil? && @user[:is_manager] %>
+          <div class = "button-div">
+            <%= f.submit 'Create Manager', :class => 'button'%>
+          </div>
+        <% end %>
       </div>
   <% end %>
 </div>

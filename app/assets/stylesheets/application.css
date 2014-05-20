@@ -21,3 +21,8 @@
     margin:0px auto;
 }
 
+
+.field_with_errors {
+  background-color: red;
+  float: right;
+}

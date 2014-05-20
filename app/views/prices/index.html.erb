@@ -1,41 +1,47 @@
-<h1>Listing prices</h1>
+<h1>Customer Pricing</h1>
 
-<table>
-  <thead>
+
+<% if !Price.count.zero? %>
+  <table>
+     <th>International</th>
     <tr>
-      <th>I air w cost</th>
-      <th>I air v cost</th>
-      <th>I land w cost</th>
-      <th>I land v cost</th>
-      <th>D air w cost</th>
-      <th>D air v cost</th>
-      <th>D land w cost</th>
-      <th>D land v cost</th>
-      <th></th>
-      <th></th>
-      <th></th>
+        <td>Air Priority - $ Per Kilogram</td>
+        <td><%= @prices.i_air_w_cost %></td>
     </tr>
-  </thead>
+    <tr>
+        <td>Air Priority - $ per Cubic Metre</td>
+        <td><%= @prices.i_air_v_cost %></td>
+    </tr>
+    <tr>
+        <td>Land Priority - $ Per Kilogram</td>
+        <td><%= @prices.i_land_w_cost %></td>
+    </tr>
+    <tr>
+        <td>Land Priority - $ Per Cubic Metre</td>
+        <td><%= @prices.i_land_v_cost %></td>
+    </tr>
 
-  <tbody>
-    <% @prices.each do |price| %>
+      <th>Domestic</th>
       <tr>
-        <td><%= price.i_air_w_cost %></td>
-        <td><%= price.i_air_v_cost %></td>
-        <td><%= price.i_land_w_cost %></td>
-        <td><%= price.i_land_v_cost %></td>
-        <td><%= price.d_air_w_cost %></td>
-        <td><%= price.d_air_v_cost %></td>
-        <td><%= price.d_land_w_cost %></td>
-        <td><%= price.d_land_v_cost %></td>
-        <td><%= link_to 'Show', price %></td>
-        <td><%= link_to 'Edit', edit_price_path(price) %></td>
-        <td><%= link_to 'Destroy', price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Air Priority - $ Per Kilogram</td>
+        <td><%= @prices.d_air_w_cost %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tr>
+        <td>Air Priority - $ Per Cubic Metre</td>
+        <td><%= @prices.d_air_v_cost %></td>
+      </tr>
+      <tr>
+        <td>Land Priority - $ Per Kilogram</td>
+        <td><%= @prices.d_land_w_cost %></td>
+      </tr>
+      <tr>
+        <td>Land Priority - $ Per Cubic Metre</td>
+        <td><%= @prices.d_land_v_cost %></td>
+      </tr>
+  </table>
+<% end %>
+<br />
+<!-- If we have a prices model then show edit priciing otherwise show a new price-->
+<%= link_to 'Manage Pricing', new_or_edit_price_path(@prices) %>
 
-<br>
 
-<%= link_to 'New Price', new_price_path %>
