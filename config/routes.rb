@@ -1,5 +1,7 @@
 TheIndoorKites::Application.routes.draw do
 
+  resources :routes
+
   resources :mail
 
   resources :prices

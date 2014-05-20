@@ -16,6 +16,17 @@
 //= require fancybox
 //= require_tree .
 
-$(document).ready(function() {
+
+
+var ready = function(){
     $("a.fancybox").fancybox();
-});
+    $('form').on('click', '.add_fields', (event), function(){
+        time = new Date().getTime();
+        regexp = new RegExp($(this).data('id'), 'g');
+        $(this).before($(this).data('fields').replace(regexp, time))
+        event.preventDefault();
+    });
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
