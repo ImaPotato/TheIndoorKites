@@ -17,6 +17,7 @@ class MailController < ApplicationController
     @mail = Mail.new
     @location = Location.all
     @price = Price.last
+    @connections = Connection.all
   end
 
   # GET /mail/1/edit

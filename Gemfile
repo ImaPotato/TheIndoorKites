@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -39,6 +42,8 @@ gem 'nokogiri'
 gem 'kaminari'
 
 gem 'fancybox2-rails'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
