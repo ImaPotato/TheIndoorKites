@@ -37,6 +37,8 @@ class PricesController < ApplicationController
     @price = Price.new(price_params)
     respond_to do |format|
       if @price.save
+         # add an row to the history table that a price has been added
+        set_history(@price)
         format.html { redirect_to @price, notice: 'Price was successfully created.' }
       else
         format.html { render action: 'new' }

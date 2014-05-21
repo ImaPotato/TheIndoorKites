@@ -30,6 +30,8 @@ class MailController < ApplicationController
 
     respond_to do |format|
       if @mail.save
+         # add an row to the history table that a mail has been added
+        set_history(@mail)
         format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
         format.json { render action: 'show', status: :created, location: @mail }
       else

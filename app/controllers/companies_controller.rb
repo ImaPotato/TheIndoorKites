@@ -25,19 +25,21 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(company_params)
-
     respond_to do |format|
       if @company.save
-
+        # add an row to the history table that a company has been added
+        set_history(@company)
         @company.connections.each do |connection|
           if !Location.where(name: connection.location_one).exists?
             new_location = Location.new(:name => connection.location_one)
             new_location.save
+            set_history(new_location)
           end
 
           if !Location.where(name: connection.location_two).exists?
             new_location = Location.new(:name => connection.location_two)
             new_location.save
+            set_history(new_location)
           end
         end
 
