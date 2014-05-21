@@ -1,6 +1,8 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
+   include HistoriesHelper
+
   # GET /companies
   # GET /companies.json
   def index
@@ -27,8 +29,10 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     respond_to do |format|
       if @company.save
+        history = History.new
         # add an row to the history table that a company has been added
-        set_history(@company)
+        set_history(@company, HISTORY_EVENT_CREATED)
+        
         @company.connections.each do |connection|
           if !Location.where(name: connection.location_one).exists?
             new_location = Location.new(:name => connection.location_one)
@@ -57,6 +61,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
+        set_history(@company,HISTORY_EVENT_CREATED)
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else

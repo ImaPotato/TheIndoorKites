@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140521011136) do
     t.integer  "mail_id"
     t.integer  "price_id"
     t.string   "event_details"
+    t.string   "event_time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

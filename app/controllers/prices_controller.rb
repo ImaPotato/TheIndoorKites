@@ -1,6 +1,8 @@
 class PricesController < ApplicationController
   before_action :set_price, only: [:show, :edit, :update, :destroy]
 
+   include HistoriesHelper
+
   # GET /prices
   # GET /prices.json
   def index
@@ -38,7 +40,7 @@ class PricesController < ApplicationController
     respond_to do |format|
       if @price.save
          # add an row to the history table that a price has been added
-        set_history(@price)
+        set_history(@price,HISTORY_EVENT_CREATED)
         format.html { redirect_to @price, notice: 'Price was successfully created.' }
       else
         format.html { render action: 'new' }
@@ -52,6 +54,7 @@ class PricesController < ApplicationController
     @price = Price.new(price_params)
     respond_to do |format|
       if @price.save
+        set_history(@price,HISTORY_EVENT_UPDATED)
         format.html { redirect_to @price, notice: 'Price was successfully updated.' }
       else
         format.html { render action: 'edit' }

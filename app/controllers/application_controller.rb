@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   prepend_before_filter :email_to_downcase, :only => [:create, :update]
 
+
+
   private
 
   def email_to_downcase
@@ -30,10 +32,12 @@ class ApplicationController < ActionController::Base
 
   # create a new row in the history table with the event that 
   # occurred (eg a company was added)
-  def set_history(event)
-    logger.debug "\n\n\nEvent is type " + event.class.name
+  # also pass in an action that occured, something like updated or created
+  # a string
+  def set_history(event, action)
+    puts action
     history = History.new
-    isValidEvent = true;
+    isValidEvent = true
     case event.class.name
       when "Company"
         history[:company_id] = event[:id] 
@@ -48,7 +52,11 @@ class ApplicationController < ActionController::Base
       else 
         isValidEvent = false;
     end
-    if(isValidEvent)
+    if isValidEvent
+      # if it's valid construct the pretty string formatted date time
+      history[:event_time] = string_for_event_time(event[:created_at])
+      # such coupling, much wow
+      history[:event_details] = history.get_event_description(event, action)
       history.save
     end 
   end
