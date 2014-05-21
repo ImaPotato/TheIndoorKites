@@ -31,7 +31,6 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     respond_to do |format|
       if @company.save
-        history = History.new
         # add an row to the history table that a company has been added
         set_history(@company,HISTORY_EVENT_CREATED)
         
@@ -51,6 +50,8 @@ class CompaniesController < ApplicationController
               set_history(new_location,HISTORY_EVENT_CREATED)
             end
           end
+          # add a history event for that connection
+          set_history(connection,HISTORY_EVENT_CREATED)
         end
 
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
