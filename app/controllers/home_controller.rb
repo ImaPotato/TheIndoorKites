@@ -4,9 +4,10 @@ class HomeController < ApplicationController
 		@company = Company.all
 	end
 
-	def search 
+	def show 
 		if params[:query]
 			@company = Company.search(params[:query])
+
 		else
 			@company =[]
 		end
