@@ -30,12 +30,12 @@
         <td><%= mail.priority %></td>
         <td><%= mail.send_date %></td>
         <td><%= mail.receive_date %></td>
-        <td><%= mail.max_delivery_time %></td>
+        <td><%= mail.max_delivery_date %></td>
         <td><%= mail.cost %></td>
         <td><%= mail.current_location %></td>
-        <td><%= link_to 'Show', mail %></td>
-        <td><%= link_to 'Edit', edit_mail_path(mail) %></td>
-        <td><%= link_to 'Destroy', mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View', mail %>
+            <%= link_to 'Edit', edit_mail_path(mail) %>
+            <%= link_to 'Delete', mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
