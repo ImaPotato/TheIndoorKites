@@ -32,13 +32,14 @@ class CompaniesController < ApplicationController
       if @company.save
 
         @company.connections.each do |connection|
-          if :location_one_drop_down.nil?
+
+          if connection.location_one_drop_down.blank?
             if !Location.where(name: connection.location_one).exists?
               new_location = Location.new(:name => connection.location_one)
               new_location.save
             end
           end
-          if :location_two_drop_down.nil?
+          if connection.location_two_drop_down.blank?
             if !Location.where(name: connection.location_two).exists?
               new_location = Location.new(:name => connection.location_two)
               new_location.save
