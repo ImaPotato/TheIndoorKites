@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519015311) do
+ActiveRecord::Schema.define(version: 20140521035908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,9 @@ ActiveRecord::Schema.define(version: 20140519015311) do
   create_table "connections", force: true do |t|
     t.integer  "company_id"
     t.string   "location_one"
+    t.string   "location_one_drop_down"
     t.string   "location_two"
+    t.string   "location_two_drop_down"
     t.decimal  "weight_cost"
     t.decimal  "volume_cost"
     t.decimal  "max_weight"
@@ -74,6 +76,12 @@ ActiveRecord::Schema.define(version: 20140519015311) do
     t.decimal  "d_air_v_cost"
     t.decimal  "d_land_w_cost"
     t.decimal  "d_land_v_cost"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "priorities", force: true do |t|
+    t.string   "transportation_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

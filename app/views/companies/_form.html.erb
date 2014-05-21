@@ -36,7 +36,7 @@
 <% end %>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    var ready = function() {
         $('#open_lightbox').click(function(){
             $('#fan').click();
             return false;
@@ -44,7 +44,10 @@
         $('#submit_form').click(function(){
             $('form').submit();
         });
-    });
+    };
+
+    $(document).ready(ready);
+    $(document).on('page:load', ready);
 
 </script>
 
