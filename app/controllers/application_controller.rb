@@ -43,9 +43,9 @@ class ApplicationController < ActionController::Base
         history[:company_id] = event[:id] 
       when "Mail"
         history[:mail_id] = event[:id]
-      when "Connections"
+      when "Connection"
         history[:connection_id] = event[:id]
-      when "Locations"
+      when "Location"
         history[:location_id] = event[:id]
       when "Price"
         history[:price_id] = event[:id]
