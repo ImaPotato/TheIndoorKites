@@ -15,10 +15,12 @@ class CompaniesController < ApplicationController
   # GET /companies/new
   def new
     @company = Company.new
+    @priorities = Priority.all
   end
 
   # GET /companies/1/edit
   def edit
+    @priorities = Priority.all
   end
 
   # POST /companies
@@ -30,14 +32,17 @@ class CompaniesController < ApplicationController
       if @company.save
 
         @company.connections.each do |connection|
-          if !Location.where(name: connection.location_one).exists?
-            new_location = Location.new(:name => connection.location_one)
-            new_location.save
+          if :location_one_drop_down.nil?
+            if !Location.where(name: connection.location_one).exists?
+              new_location = Location.new(:name => connection.location_one)
+              new_location.save
+            end
           end
-
-          if !Location.where(name: connection.location_two).exists?
-            new_location = Location.new(:name => connection.location_two)
-            new_location.save
+          if :location_two_drop_down.nil?
+            if !Location.where(name: connection.location_two).exists?
+              new_location = Location.new(:name => connection.location_two)
+              new_location.save
+            end
           end
         end
 
@@ -75,16 +80,16 @@ class CompaniesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_company
-      @company = Company.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_company
+    @company = Company.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def company_params
-      params.require(:company).permit(:company_name, connections_attributes:
-          [:id, :_destroy, :location_one, :location_two, :weight_cost, :volume_cost, :max_weight, :max_volume, :duration, :frequency, :priority, :day, :utilised, locations_attributes: [:id, :name]
-          ]
-      )
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def company_params
+    params.require(:company).permit(:company_name, connections_attributes:
+        [:id, :_destroy, :location_one, :location_one_drop_down, :location_two, :location_two_drop_down, :weight_cost, :volume_cost, :max_weight, :max_volume, :duration, :frequency, :priority, :day, :utilised, locations_attributes: [:id, :name]
+        ]
+    )
+  end
 end

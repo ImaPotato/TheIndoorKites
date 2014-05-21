@@ -1,0 +1,7 @@
+<% if @company.empty? %>
+        <span>There were no results for your query</span><br/><br/>
+<% else %>
+	<% for company in @company %>
+		Result: <% company.company_name %>
+<% end %>
+<% end %>

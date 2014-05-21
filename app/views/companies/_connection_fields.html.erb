@@ -1,4 +1,4 @@
-<fieldset>
+<fieldset class="connections-form">
   <%= f.label :location_one, "Location One" %>
   <br/>
   <% if f.object.new_record? %>
@@ -6,11 +6,15 @@
       <br/>
       <% if Location.all.any? %>
           <p> or select from: </p> <br/>
-          <%= f.collection_select :location_one, Location.all, :name, :name, :include_blank => 'Select a location' %>
+          <%= f.collection_select :location_one_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
           <br/>
       <% end %>
   <% else %>
-      <%= f.text_field :location_one, :readonly => true %>
+      <% if :location_one_drop_down.nil? %>
+          <%= f.text_field :location_one, :readonly => true %>
+      <% else %>
+          <%= f.text_field :location_one_drop_down, :readonly => true %>
+      <% end %>
       <br/>
   <% end %>
 
@@ -21,11 +25,15 @@
       <br/>
       <% if Location.all.any? %>
           <p> or select from: </p> <br/>
-          <%= f.collection_select :location_two, Location.all, :name, :name, :include_blank => 'Select a location' %>
+          <%= f.collection_select :location_two_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
           <br/>
       <% end %>
   <% else %>
-      <%= f.text_field :location_two, :readonly => true %>
+      <% if :location_two_drop_down.nil? %>
+          <%= f.text_field :location_two, :readonly => true %>
+      <% else %>
+          <%= f.text_field :location_two_drop_down, :readonly => true %>
+      <% end %>
       <br/>
   <% end %>
   <%= f.label :weight_cost, "Weight Cost" %>
@@ -68,6 +76,4 @@
   <br />
   <%= f.check_box :_destroy %>
   <br/>
-
 </fieldset>
-

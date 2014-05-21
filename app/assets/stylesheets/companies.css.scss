@@ -32,11 +32,53 @@
 	padding: 5px 0px 15px 0px;
 }
 
-.companies-card td {
-	padding-bottom: 10px;
-	font-weight: 300;
-}
 
 .companies-card .companies-button {
 	padding: 0px 0px 0px 10px;
 }
+
+
+.companies-form form label {
+	text-transform: uppercase;
+	width: 150px;
+	float: left;
+	text-align: right;
+	margin-right:  3em;
+	display: inline-block;
+	padding: 10px 0 0;
+}
+
+.connections-form label {
+	text-transform: uppercase;
+	width: 150px;
+	float: left;
+	text-align: right;
+	margin-right:  3em;
+	margin-top: 15px;
+	display: inline-block;
+}
+
+.companies-form form input[type='text'] {
+  width: 300px;
+  padding: 6px 0px 6px 5px;
+  margin: 0px 0px 0px 0px;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: italic;
+  text-shadow: 1px 1px 0 rgba(255,255,255,1.0);
+  border: 1px solid #056329;
+}
+
+/**  background: #dfe9ec;
+  color: #414848;
+}*/
+
+.companies-form form input[type='text']:focus {
+  background: #dfe9ec;
+  color: #414848;
+  font-style: normal;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
+} 
+
