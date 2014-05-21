@@ -41,13 +41,14 @@ class CompaniesController < ApplicationController
             if !Location.where(name: connection.location_one).exists?
               new_location = Location.new(:name => connection.location_one)
               new_location.save
-			  set_history(new_location)
+			        set_history(new_location,HISTORY_EVENT_CREATED)
             end
           end
           if connection.location_two_drop_down.blank?
             if !Location.where(name: connection.location_two).exists?
               new_location = Location.new(:name => connection.location_two)
               new_location.save
+              set_history(new_location,HISTORY_EVENT_CREATED)
             end
           end
         end
