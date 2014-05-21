@@ -89,6 +89,19 @@ ActiveRecord::Schema.define(version: 20140521011136) do
     t.datetime "updated_at"
   end
 
+  create_table "routes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "routes_connections", id: false, force: true do |t|
+    t.integer  "route_id"
+    t.integer  "connection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_hash"
