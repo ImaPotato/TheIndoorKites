@@ -8,7 +8,7 @@
 
 	<ol>
   	<% @company.connections.each do |conn| %>
-  	<li><%= conn %></li>
+  	<li><%= conn.location_one + " to " + conn.location_two %></li>
   	<% end %>
 	</ol>
 
