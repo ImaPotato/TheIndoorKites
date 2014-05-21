@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Event Type</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td class="events-button"><%= link_to 'Event', event.id %></td>
+        <td><%= event.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
