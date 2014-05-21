@@ -50,8 +50,16 @@
     *display: inline;
     zoom: 1;
     margin: 0;
+    color: #fff;
     vertical-align: middle;
 }
+
+.pure-menu li a:hover,
+.pure-menu li a:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
 .pure-menu.pure-menu-horizontal > ul {
     display: inline-block;
     *display: inline;
