@@ -13,7 +13,7 @@
 
 .pure-menu.pure-menu-open,
 .pure-menu.pure-menu-horizontal li .pure-menu-children {
-    background: #137532; /* Old browsers */
+    background: url("/assets/map-background.jpg"); /* Old browsers */
     border: 1px solid #b7b7b7;
     text-transform: uppercase;
 }
@@ -48,7 +48,7 @@
 
 .pure-menu .pure-menu-can-have-children > li:hover:after {
     color: #fff;
-}
+
 
 /* Focus style for a dropdown menu-item when the parent has been opened */
 .pure-menu .pure-menu-open {
@@ -58,7 +58,7 @@
 
 .pure-menu li a:hover,
 .pure-menu li a:focus {
-    background: #1CAD4A;
+    background-color: #1CAD4A;
 }
 
 /* DISABLED STATES */

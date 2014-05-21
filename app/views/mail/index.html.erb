@@ -1,3 +1,4 @@
+<div class="mail-card" >
 <h1>Listing mail</h1>
 
 <table>
@@ -5,7 +6,6 @@
     <tr>
       <th>To</th>
       <th>From</th>
-      <th>Day</th>
       <th>Weight</th>
       <th>Volume</th>
       <th>Priority</th>
@@ -25,18 +25,17 @@
       <tr>
         <td><%= mail.to %></td>
         <td><%= mail.from %></td>
-        <td><%= mail.day %></td>
         <td><%= mail.weight %></td>
         <td><%= mail.volume %></td>
         <td><%= mail.priority %></td>
         <td><%= mail.send_date %></td>
         <td><%= mail.receive_date %></td>
-        <td><%= mail.max_delivery_time %></td>
+        <td><%= mail.max_delivery_date %></td>
         <td><%= mail.cost %></td>
         <td><%= mail.current_location %></td>
-        <td><%= link_to 'Show', mail %></td>
-        <td><%= link_to 'Edit', edit_mail_path(mail) %></td>
-        <td><%= link_to 'Destroy', mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View', mail %>
+            <%= link_to 'Edit', edit_mail_path(mail) %>
+            <%= link_to 'Delete', mail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -45,3 +44,5 @@
 <br>
 
 <%= link_to 'New Mail', new_mail_path %>
+
+</div>
