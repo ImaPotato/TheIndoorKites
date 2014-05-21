@@ -13,8 +13,7 @@
 
 .pure-menu.pure-menu-open,
 .pure-menu.pure-menu-horizontal li .pure-menu-children {
-    background-image: url("/assets/map-background.jpg"); /* Old browsers */
-    background-position: center;
+    background: url("/assets/map-background.jpg"); /* Old browsers */
     border: 1px solid #b7b7b7;
     text-transform: uppercase;
 }
@@ -59,7 +58,7 @@
 
 .pure-menu li a:hover,
 .pure-menu li a:focus {
-    background: #1CAD4A;
+    background-color: #1CAD4A;
 }
 
 /* DISABLED STATES */
