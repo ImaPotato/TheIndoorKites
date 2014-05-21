@@ -13,7 +13,8 @@
 
 .pure-menu.pure-menu-open,
 .pure-menu.pure-menu-horizontal li .pure-menu-children {
-    background: #137532; /* Old browsers */
+    background-image: url("/assets/map-background.jpg"); /* Old browsers */
+    background-position: center;
     border: 1px solid #b7b7b7;
     text-transform: uppercase;
 }
@@ -48,7 +49,7 @@
 
 .pure-menu .pure-menu-can-have-children > li:hover:after {
     color: #fff;
-}
+
 
 /* Focus style for a dropdown menu-item when the parent has been opened */
 .pure-menu .pure-menu-open {
