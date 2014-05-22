@@ -19,6 +19,7 @@
 $ = jQuery;
 var ready = function(){
 	
+	var currentId;
    // $("a.fancybox").fancybox();
 
     $('form').on('click', '.add_fields', (event), function(){

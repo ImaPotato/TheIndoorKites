@@ -27,4 +27,22 @@ module HistoriesHelper
 	    event_path
 	end
 
+	def render_event(event)
+		if(!event.nil?)
+			case event.event_type
+		      when "Company"
+		      	puts event.company_id
+		      	render partial:"companies/show" , :locals => { :id => event.company_id}
+		      when "Mail"
+		        render 'mail/show' , :locals => { :id => event.company_id}
+		      when "Connection"
+		        #render 'connections/show' , @event.connection_id
+		      when "Location"
+		      #  render 'location/show', @event.location_id
+		      when "Price"
+		       # render 'price/show', @event.price_id
+		    end
+		end
+	end
+
 end
