@@ -24,7 +24,7 @@ class History < ActiveRecord::Base
 	      	location = Location.find(self.location_id)
 	        eventDescription = "%s KPS Distribution Centre %s" % [action,location[:name]]
 	      when "Price"
-	        eventDescription  = "%s Pricing"
+	        eventDescription  = "%s Pricing" % [action]
 	      else
 	      	eventDescription = "No Event Description Avaliable"
       	end

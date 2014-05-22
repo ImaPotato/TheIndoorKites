@@ -1,0 +1,20 @@
+<h3>Notifications</h3>
+<div>
+<table>
+  <thead>
+    <tr>
+      <th>Details</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notifications.each do |notification| %>
+      <tr>
+        <td><%= notification.event_details %></td>
+        <td><%= notification.event_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
