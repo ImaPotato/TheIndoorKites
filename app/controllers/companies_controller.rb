@@ -71,7 +71,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
-        set_history(@company,HISTORY_EVENT_UPDATE)
+        set_history(@company,HISTORY_EVENT_UPDATED)
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else

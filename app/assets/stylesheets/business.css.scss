@@ -1,0 +1,54 @@
+.business-card {
+	background-color: #fff;
+	margin: 5% 10% 5% 10%;
+	padding: 25px;
+	border: solid;
+	border-color: #CCC;
+	border-width: 0px 0px 2px 0px;
+}
+
+.business-card h1 {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-style: italic;
+	border: solid;
+	border-color: #DEDEDE;
+	border-width: 0px 0px 2px 0px;
+	padding: 0px 0px 10px 10px;
+	margin: 0px 0px 10px 0px;
+}
+
+.business-divisor {
+	width: 100%;
+}
+
+.business-tabview {
+	background-color: #CDCDCD;
+}
+
+.business-logview {
+}
+
+.business-logview table {
+	margin: 20px;
+	padding: 10px 10px 10px 10px;
+	border-collapse: collapse;
+}
+
+.business-logview th {
+	text-transform: uppercase;
+	font-weight: 400;
+	padding: 5px 0px 10px 10px;
+	text-align: center;
+}
+
+.logview-main-row:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.business-logview .open_event {
+	padding: 10px;
+	border: solid;
+	border-width: 2px 0px 2px 0px;
+	border-color: #CDCDCD;		
+}
