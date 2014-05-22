@@ -10,7 +10,7 @@
       <td>
       <% if Location.all.any? %>
           <p> or select from: </p>
-          <%= f.collection_select :location_one_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
+          <%= f.collection_select :location_one, Location.all, :name, :name, :include_blank => 'Select a location' %>
           <br>
         <% end %>
     <% else %>
@@ -27,7 +27,7 @@
       <td><%= f.text_field :location_two, placeholder:'City Name' %></td>
       <td><% if Location.all.any? %>
           <p> or select from: </p>
-          <%= f.collection_select :location_two_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
+          <%= f.collection_select :location_two, Location.all, :name, :name, :include_blank => 'Select a location' %>
         <% end %>
       <% else %>
 
