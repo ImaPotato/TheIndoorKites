@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+
     <div class="field">
       <br/>
       <%= f.label :name, "Name" %>
@@ -17,24 +18,22 @@
       <%= f.text_field :name %>
 
 
-      <select id = "connections">
-        <% Connection.all.each do |connection| %>
-            <option><% connection.location_one %> to/from <% connection.location_two %> </option>
-        <% end %>
-      </select>
+      <div id="starter_connection">
+        <%= f.select(:connection, Connection.all.collect {|a| [a.location_one + " to/from " + a.location_two, a.id ] }, :include_blank => 'Select a starting connection') %>
+      </div>
 
+
+      <%= f.fields_for :connections do |builder| %>
+        <%= render 'connection_fields', :f => builder %>
+      <% end %>
+
+      <div >
+         <p><%= link_to_add_fields "Add Connection", f, :connections %></p>
+      </div>
 
       <div class="actions">
         <%= f.submit %>
       </div>
     </div>
+
 <% end %>
-
-
-<script type="text/javascript">
-  $ = jQuery;
-
-  $(document).ready(function() {
-    $()
-  });
-</script>

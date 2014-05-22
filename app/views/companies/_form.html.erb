@@ -1,3 +1,4 @@
+<%= javascript_include_tag :defaults %>
 <div class="companies-form">
 <%= form_for(@company) do |f| %>
 
@@ -35,7 +36,7 @@
     <button id="open_lightbox">submit</button>
 
   <div class="actions" style="display: none">
-    <%= link_to "Show mah Fancybox!", "#lightbox_submit", class: "fancybox", id: 'fan' %>
+    <%= link_to "add company", "#lightbox_submit", class: "fancybox", id: 'fan' %>
     <div id="lightbox_submit">
       <button id="submit_form">submit</button>
     </div>

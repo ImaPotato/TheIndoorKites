@@ -1,6 +1,6 @@
 class CreateRouteConnectionJoinTable < ActiveRecord::Migration
   def self.up
-    create_table :routes_connections, :id => false do |t|
+    create_table :connections_routes, :id => false do |t|
       t.integer :route_id
       t.integer :connection_id
 
@@ -9,6 +9,6 @@ class CreateRouteConnectionJoinTable < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :routes_connections
+    drop_table :connections_routes
   end
 end
