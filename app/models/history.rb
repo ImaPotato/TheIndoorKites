@@ -35,6 +35,7 @@ class History < ActiveRecord::Base
 	def get_detailed_description()
 		if self.nil?
 			return "No event Description Avaliable"
+		end
 		case :event_type
 	      when "Company"
 	      	if self.company_id.nil?
