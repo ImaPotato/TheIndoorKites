@@ -40,7 +40,7 @@
 
   <tr>
     <td><%= f.label :weight %></td>
-    <td><%= f.text_field :weight, placeholder:'g' %></td>
+    <td><%= f.text_field :weight, placeholder:'grams' %></td>
   </tr>
 
   <tr>
@@ -50,7 +50,7 @@
 
   <tr>
     <td><%= f.label :priority %></td>
-    <td><%= f.select :priority, [['Air', 1], ['Land', 2]], :include_blank => 'Transport', required: true %></td>
+    <td><%= f.select :priority, [['Air', 1], ['Land', 2]], :include_blank => 'SELECT TRANSPORT', required: true %></td>
   </tr>
 
   <tr>

@@ -42,23 +42,23 @@
 
     <tr class="pricing-desc">
        <td>Weight Cost</td>
-       <td>$ Per Kilogram</td>
+       <td>$ Per Gram</td>
      </tr>
 
     <tr>
         <td><%= f.label "Air" %></td>
-        <td><%= f.text_field :i_air_w_cost, required: true, placeholder:'g/cm³' %></td>
+        <td><%= f.text_field :i_air_w_cost, required: true, placeholder:'NZD/g' %></td>
         <td></td>
         <td><%= f.label "Air" %></td>
-        <td><%= f.text_field :d_air_w_cost ,required: true, placeholder:'g/cm³'%></td>
+        <td><%= f.text_field :d_air_w_cost ,required: true, placeholder:'NZD/g'%></td>
     </tr>
     
     <tr>
         <td><%= f.label "Land" %></td>
-        <td><%= f.text_field :i_land_w_cost, placeholder:'g/cm³' %></td>
+        <td><%= f.text_field :i_land_w_cost, placeholder:'NZD/g' %></td>
         <td></td>
         <td><%= f.label "Land" %></td>
-        <td><%= f.text_field :d_land_w_cost, placeholder:'g/cm³' %></td>
+        <td><%= f.text_field :d_land_w_cost, placeholder:'NZD/g' %></td>
     </tr>
     
   </table>
