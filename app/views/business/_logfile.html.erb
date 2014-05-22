@@ -9,11 +9,15 @@
 
   <tbody>
     <% @events.each do |event| %>
-      <tr>
-        <td><%= event.event_details %></td>
-        <td><%= event.event_time %></td>
+      <tr >
+        <td class = "open_event" , id = "<%= event.id %>"><%= event.event_details %></td>
+        <td class = "open_event" , id = "<%= event.id %>"><%= event.event_time %></td>
       </tr>
+      <tr id = "id<%= event.id %>" , style = "display:none">
+        <td>fkdhjhgdfkghkhghkghfdhgk</td>
+      <tr>
     <% end %>
   </tbody>
 </table>
 </div>
+

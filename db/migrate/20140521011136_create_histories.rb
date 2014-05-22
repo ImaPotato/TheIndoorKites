@@ -8,6 +8,7 @@ class CreateHistories < ActiveRecord::Migration
       t.integer :price_id
       t.string :event_details
       t.string :event_time
+      t.string :event_type
       t.timestamps
     end
   end

@@ -57,6 +57,7 @@ class ApplicationController < ActionController::Base
       history[:event_time] = string_for_event_time(event[:created_at])
       # such coupling, much wow
       history[:event_details] = history.get_event_description(event, action)
+      history[:event_type] = event.class.name
       history.save
     end 
   end

@@ -1,73 +1,109 @@
 <fieldset class="connections-form">
-  <%= f.label :location_one, "Location One" %>
-  <br/>
-  <% if f.object.new_record? %>
-      <%= f.text_field :location_one %>
-      <br/>
+
+<table>
+  
+  <tr>
+    <td><%= f.label :location_one, "Start Location" %></td>
+
+    <% if f.object.new_record? %>
+      <td><%= f.text_field :location_one %></td>
+      <td>
       <% if Location.all.any? %>
-          <p> or select from: </p> <br/>
+          <p> or select from: </p>
           <%= f.collection_select :location_one_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
-          <br/>
-      <% end %>
-  <% else %>
+          <br>
+        <% end %>
+    <% else %>
+        <% if f.object.location_one_drop_down.blank? %>
           <%= f.text_field :location_one, :readonly => true %>
-      <br/>
-  <% end %>
-
-  <%= f.label :location_two, "Location Two" %>
-  <br/>
-  <% if f.object.new_record? %>
-      <%= f.text_field :location_two %>
-      <br/>
-      <% if Location.all.any? %>
-          <p> or select from: </p> <br/>
-          <%= f.collection_select :location_two_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
-          <br/>
+        <% else %>
+          <%= f.text_field :location_one_drop_down, :readonly => true %>
+        <% end %>
+        <br>
       <% end %>
-  <% else %>
+      </td>
+  </tr>
 
+  <tr>
+    <td><%= f.label :location_two, "End Location" %></td>
+    
+    <% if f.object.new_record? %>
+      <td><%= f.text_field :location_two %></td>
+      <td><% if Location.all.any? %>
+          <p> or select from: </p>
+          <%= f.collection_select :location_two_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
+        <% end %>
+      <% else %>
+        <%  if f.object.location_two_drop_down.blank? %>
           <%= f.text_field :location_two, :readonly => true %>
+        <% else %>
+          <%= f.text_field :location_two_drop_down, :readonly => true %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
 
-      <br/>
-  <% end %>
-  <%= f.label :weight_cost, "Weight Cost" %>
-  <br/>
-  <%= f.text_field :weight_cost %>
-  <br/>
-  <%= f.label :volume_cost, "Volume Cost" %>
-  <br/>
-  <%= f.text_field :volume_cost %>
-  <br/>
-  <%= f.label :max_weight, "Max Weight" %>
-  <br/>
-  <%= f.text_field :max_weight %>
-  <br/>
-  <%= f.label :max_volume, "Max Volume" %>
-  <br/>
-  <%= f.text_field :max_volume %>
-  <br/>
-  <%= f.label :duration, "Duration" %>
-  <br/>
-  <%= f.text_field :duration %>
-  <br/>
-  <%= f.label :frequency, "Frequency" %>
-  <br/>
-  <%= f.text_field :frequency %>
-  <br/>
-  <%= f.label :priority, "Priority" %>
-  <br/>
-  <%= f.text_field :priority %>
-  <br/>
-  <%= f.label :day, "Day" %>
-  <br/>
-  <%= f.text_field :day %>
-  <br/>
-  <%= f.label :utilised, "Utilised" %>
-  <br/>
-  <%= f.check_box :utilised %>
-  <br />
-  <%= f.label :_destroy, "Delete" %>
-  <br />
-  <%= f.check_box :_destroy %>
-  <br/>
+  <tr>
+    <td><%= f.label :weight_cost, "Weight Cost" %></td>
+    <td><%= f.text_field :weight_cost %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :volume_cost, "Volume Cost" %></td>
+    <td><%= f.text_field :volume_cost %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :max_weight, "Max Weight" %></td>
+    <td><%= f.text_field :max_weight %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :max_volume, "Max Volume" %></td>
+    <td><%= f.text_field :max_volume %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :duration, "Duration" %></td>
+    <td><%= f.text_field :duration %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :frequency, "Frequency" %></td>
+    <td><%= f.text_field :frequency %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :priority, "Priority" %></td>
+    <td><%= f.text_field :priority %></td>
+    <td></td>
+  </tr>
+
+  
+  <tr>
+    <td><%= f.label :day, "Day" %></td>
+    <td><%= f.text_field :day %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :utilised, "Utilised" %></td>
+    <td><%= f.check_box :utilised %></td>
+    <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :_destroy, "Delete" %></td>
+    <td><%= f.check_box :_destroy %></td>
+    <td></td>
+  </tr>
+
+</table>
+
 </fieldset>
