@@ -43,6 +43,7 @@ class CompaniesController < ApplicationController
             end
           else
             connection.location_one = connection.location_one_drop_down
+            connection.save
           end
           if connection.location_two_drop_down.blank?
             if !Location.where(name: connection.location_two).exists?
@@ -52,6 +53,7 @@ class CompaniesController < ApplicationController
             end
           else
             connection.location_two = connection.location_two_drop_down
+            connection.save
           end
           # add a history event for that connection
           set_history(connection,HISTORY_EVENT_CREATED)
