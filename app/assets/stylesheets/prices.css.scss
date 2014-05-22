@@ -21,3 +21,36 @@
 	padding: 0px 0px 10px 10px;
 	margin: 0px 0px 10px 0px;
 }
+
+.pricing-card table {
+	margin: 0px 10px 0px 10px;
+}
+
+.pricing-spacer {
+	width: 50px;
+}
+
+.pricing-card th {
+	text-transform: uppercase;
+	font-weight: 400;
+	padding: 5px 0px 15px 0px;
+}
+
+.pricing-card tr {
+	height: 40px;
+}
+
+.pricing-desc {
+	font-style: italic;
+}
+
+.pricing-form form input[type='text'] {
+  width: 100px;
+  padding: 6px 0px 6px 5px;
+  margin: 0px 0px 0px 0px;
+  font-weight: 300;
+  font-size: 15px;
+  font-style: italic;
+  text-shadow: 1px 1px 0 rgba(255,255,255,1.0);
+  border: 1px solid #056329;
+}
