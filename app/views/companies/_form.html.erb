@@ -22,7 +22,7 @@
 
 
     <% if @company.new_record? %>
-      <%= f.text_field :company_name %>
+      <%= f.text_field :company_name, placeholder:'Transport Firm' %>
         <% else %>
         <%= f.text_field :company_name, :readonly => true  %>
       <% end %>

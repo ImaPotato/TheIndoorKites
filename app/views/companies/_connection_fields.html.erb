@@ -6,7 +6,7 @@
     <td><%= f.label :location_one, "Start Location" %></td>
 
     <% if f.object.new_record? %>
-      <td><%= f.text_field :location_one %></td>
+      <td><%= f.text_field :location_one, placeholder:'City Name' %></td>
       <td>
       <% if Location.all.any? %>
           <p> or select from: </p>
@@ -28,7 +28,7 @@
     <td><%= f.label :location_two, "End Location" %></td>
     
     <% if f.object.new_record? %>
-      <td><%= f.text_field :location_two %></td>
+      <td><%= f.text_field :location_two, placeholder:'City Name' %></td>
       <td><% if Location.all.any? %>
           <p> or select from: </p>
           <%= f.collection_select :location_two_drop_down, Location.all, :name, :name, :include_blank => 'Select a location' %>
@@ -45,50 +45,50 @@
 
   <tr>
     <td><%= f.label :weight_cost, "Weight Cost" %></td>
-    <td><%= f.text_field :weight_cost, required: true %></td>
+    <td><%= f.text_field :weight_cost, required: true, placeholder:'NZD/g' %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :volume_cost, "Volume Cost" %></td>
-    <td><%= f.text_field :volume_cost , required: true %></td>
+    <td><%= f.text_field :volume_cost , required: true, placeholder:'NZD/cm³' %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :max_weight, "Max Weight" %></td>
-    <td><%= f.text_field :max_weight, required: true %></td>
+    <td><%= f.text_field :max_weight, required: true, placeholder:'g' %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :max_volume, "Max Volume" %></td>
-    <td><%= f.text_field :max_volume,required: true %></td>
+    <td><%= f.text_field :max_volume,required: true, placeholder:'cm³' %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :duration, "Duration" %></td>
-    <td><%= f.text_field :duration,required: true %></td>
+    <td><%= f.text_field :duration,required: true, placeholder:'Hours to reach destination' %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :frequency, "Frequency" %></td>
-    <td><%= f.text_field :frequency %></td>
+    <td><%= f.text_field :frequency, placeholder:'Hours between each departure' %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :priority, "Priority" %></td>
-    <td><%= f.text_field :priority,required: true %></td>
+    <td><%= f.text_field :priority,required: true, placeholder:'Form of transportation' %></td>
     <td></td>
   </tr>
 
   
   <tr>
     <td><%= f.label :day, "Day" %></td>
-    <td><%= f.text_field :day,required: true %></td>
+    <td><%= f.text_field :day,required: true, placeholder:'First day of departure, of the year' %></td>
     <td></td>
   </tr>
 

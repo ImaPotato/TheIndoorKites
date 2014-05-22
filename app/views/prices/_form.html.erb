@@ -25,17 +25,17 @@
 
      <tr>
         <td><%= f.label "Air" %></td> 
-        <td><%= f.text_field :i_air_v_cost %></td>
+        <td><%= f.text_field :i_air_v_cost, placeholder:'NZD/cm³' %></td>
         <td class="pricing-spacer"></td>
         <td><%= f.label "Air" %></td>
-        <td><%= f.text_field :d_air_v_cost, required: true %></td>
+        <td><%= f.text_field :d_air_v_cost, required: true, placeholder:'NZD/cm³' %></td>
     </tr>
     <tr>
         <td><%= f.label "Land" %></td>
-        <td><%= f.text_field :i_land_v_cost, required: true %></td>
+        <td><%= f.text_field :i_land_v_cost, required: true, placeholder:'NZD/cm³' %></td>
         <td></td>
         <td><%= f.label "Land" %></td>
-        <td><%= f.text_field :d_land_v_cost, required: true %></td>
+        <td><%= f.text_field :d_land_v_cost, required: true, placeholder:'NZD/cm³' %></td>
     </tr>
 
     <tr height="20px"></tr>
@@ -47,18 +47,18 @@
 
     <tr>
         <td><%= f.label "Air" %></td>
-        <td><%= f.text_field :i_air_w_cost, required: true %></td>
+        <td><%= f.text_field :i_air_w_cost, required: true, placeholder:'g/cm³' %></td>
         <td></td>
         <td><%= f.label "Air" %></td>
-        <td><%= f.text_field :d_air_w_cost ,required: true%></td>
+        <td><%= f.text_field :d_air_w_cost ,required: true, placeholder:'g/cm³'%></td>
     </tr>
     
     <tr>
         <td><%= f.label "Land" %></td>
-        <td><%= f.text_field :i_land_w_cost %></td>
+        <td><%= f.text_field :i_land_w_cost, placeholder:'g/cm³' %></td>
         <td></td>
         <td><%= f.label "Land" %></td>
-        <td><%= f.text_field :d_land_w_cost %></td>
+        <td><%= f.text_field :d_land_w_cost, placeholder:'g/cm³' %></td>
     </tr>
     
   </table>

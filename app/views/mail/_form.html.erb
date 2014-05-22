@@ -33,11 +33,11 @@
     <br />
   <div class="field">
     <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
+    <%= f.text_field :weight, placeholder:'g' %>
   </div>
   <div class="field">
     <%= f.label :volume %><br>
-    <%= f.text_field :volume %>
+    <%= f.text_field :volume, placeholder:'cm³' %>
   </div>
   <div class="field">
    <%= f.label :priority %><br>
@@ -59,7 +59,7 @@
   </div>
   <div class="field">
     <%= f.label :cost %><br>
-    <%= f.text_field :cost, :readonly => true %>
+    <%= f.text_field :cost, :readonly => true, placeholder:'NZD' %>
   </div>
   <div class="actions">
     <%= f.submit %>
