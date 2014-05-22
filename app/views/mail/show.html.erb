@@ -1,54 +1,71 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>To:</strong>
-  <%= @mail.to %>
-</p>
+<div class="mail-card">
 
-<p>
-  <strong>From:</strong>
-  <%= @mail.from %>
-</p>
+<h1>mail details</h1>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @mail.weight %>
-</p>
+  <table class="mail-view">
 
-<p>
-  <strong>Volume:</strong>
-  <%= @mail.volume %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>tracking id</a></td>
+      <td><%= @mail.id %></td>
+    </tr>
+    
+    <tr>
+      <td class="mail-label" ><a>destination</a></td>
+      <td><%= @mail.to %></td>
+    </tr>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @mail.priority %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>origin</a></td>
+      <td><%= @mail.from %></td>
+    </tr>
 
-<p>
-  <strong>Send date:</strong>
-  <%= @mail.send_date %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>weight</a></td>
+      <td><%= @mail.weight %></td>
+    </tr>
 
-<p>
-  <strong>Receive date:</strong>
-  <%= @mail.receive_date %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>volume</a></td>
+      <td><%= @mail.volume %></td>
+    </tr>
 
-<p>
-  <strong>Max delivery time:</strong>
-  <%= @mail.max_delivery_time %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>priority</a></td>
+      <td><%= @mail.priority %></td>
+    </tr>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @mail.cost %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>sent</a></td>
+      <td><%= @mail.send_date %></td>
+    </tr>
 
-<p>
-  <strong>Current location:</strong>
-  <%= @mail.current_location %>
-</p>
+    <tr>
+      <td class="mail-label" ><a>received</a></td>
+      <td><%= @mail.receive_date %></td>
+    </tr>
 
-<%= link_to 'Edit', edit_mail_path(@mail) %> |
-<%= link_to 'Back', mail_index_path %>
+    <tr>
+      <td class="mail-label" ><a>max. delivery time</a></td>
+      <td><%= @mail.max_delivery_time %></td>
+    </tr>
+
+    <tr>
+      <td class="mail-label" ><a>cost</td>
+      <td><%= @mail.cost %></td>
+    </tr>
+
+    <tr>
+      <td class="mail-label" ><a>current location</a></td>
+      <td><%= @mail.current_location %></td>
+    </tr>
+
+  </table>
+
+
+<div class="mail-edit-button"><%= link_to 'Edit', edit_mail_path(@mail) %></div>
+<div class="mail-back-button"><%= link_to 'Back', mail_index_path %></div>
+
+
+</div>
