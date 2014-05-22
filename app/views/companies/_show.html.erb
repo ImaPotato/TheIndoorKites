@@ -1,0 +1,15 @@
+<div id= 'somehtingStupid'>
+<div>
+	<% company = Company.find(id) %>
+	<p>
+  	<strong>Company name:</strong>
+  	<%= company.company_name%>
+	</p>
+	<ol>
+  	<% company.connections.each do |conn| %>
+  	<li><%= conn.location_one + " to " + conn.location_two %></li>
+  	<% end %>
+	</ol>
+	<%= link_to 'Edit', edit_company_path(company) %>
+</div>
+</div>
