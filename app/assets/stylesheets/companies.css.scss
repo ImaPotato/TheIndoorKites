@@ -50,7 +50,7 @@
 }
 
 .company-name {
-	padding: 0px 0px 10px 26px;
+	padding: 0px 0px 20px 26px;
 }
 
 .company-name label {
@@ -97,18 +97,29 @@
 	font-size: 15px;
 	font-weight: 400;
 	float: right;
+	margin: 10px 20px 0px 0px;
 }
 
 .companies-form input[type='submit']:hover {
 	background-color: rgba(64, 102, 24, 0.7);
 }
 
-.grey-button {
-	margin: 10px 0px 0px 0px;
+.add-button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+	margin: 10px 0px 0px 30px;
 }
 
-.grey-button a {
-	margin: 100px 0px 0px 0px;
+.other-button {
+	margin: 15px 0px 0px 30px;
+}
+
+.other-button a {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #000;
@@ -118,6 +129,28 @@
 	font-weight: 400;
 }
 
-.grey-button a:hover {
-	background-color: #EDEDED;
+.add-button a:hover {
+	background-color: #DDDDDD;
+}
+
+.other-button a:hover {
+	background-color: #DDDDDD;
+}
+
+.add-companies-button {
+	margin: 10px 0px 10px 15px;
+}
+
+.add-companies-button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.add-companies-button a:hover {
+	background-color: #DDDDDD;
 }

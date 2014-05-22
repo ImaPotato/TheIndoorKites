@@ -18,19 +18,22 @@
 
   <div class="company-name">
     <%= f.label :company_name %>
+  
+
 
     <% if @company.new_record? %>
       <%= f.text_field :company_name %>
         <% else %>
         <%= f.text_field :company_name, :readonly => true  %>
       <% end %>
-
-        <%= f.fields_for :connections do |builder| %>
-          <%= render 'connection_fields', :f => builder %>
-        <% end %>
   </div>
 
-    <div class="grey-button"> <%= link_to_add_fields "Add Connection", f, :connections %></div>
+  <%= f.fields_for :connections do |builder| %>
+    <%= render 'connection_fields', :f => builder %>
+  <% end %>
+  
+
+    <div class="companies-button"> <%= link_to_add_fields " + Add Connection", f, :connections %></div>
   <div class="submit-button"><%= f.submit %></div>
 <% end %>
 

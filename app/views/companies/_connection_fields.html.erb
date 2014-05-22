@@ -15,7 +15,7 @@
         <% end %>
     <% else %>
         <% if f.object.location_one_drop_down.blank? %>
-          <%= f.text_field :location_one, :readonly => true %>
+          <td><%= f.text_field :location_one, :readonly => true %></td>
         <% else %>
           <%= f.text_field :location_one_drop_down, :readonly => true %>
         <% end %>
@@ -35,7 +35,7 @@
         <% end %>
       <% else %>
         <%  if f.object.location_two_drop_down.blank? %>
-          <%= f.text_field :location_two, :readonly => true %>
+          <td><%= f.text_field :location_two, :readonly => true %></td>
         <% else %>
           <%= f.text_field :location_two_drop_down, :readonly => true %>
         <% end %>
