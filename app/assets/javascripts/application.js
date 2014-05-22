@@ -20,7 +20,8 @@
 
 
 var ready = function(){
-    $("a.fancybox").fancybox();
+	//$("a.fancybox").fancybox();
+	var currentId;
 
     $('form').on('click', '.add_fields', (event), function(){
         time = new Date().getTime();
@@ -28,6 +29,16 @@ var ready = function(){
         $(this).before($(this).data('fields').replace(regexp, time))
         event.preventDefault();
     });
+	$('.open_event').on("click",function(event){
+			$(currentId).hide(); 
+			var id = "#id" + event.target.id;
+			if(currentId != id){
+	        	$(id).show();
+	        	currentId = id;
+	    	} else {
+	    		currentId = "";
+	    	}
+	});
 
 }
 
