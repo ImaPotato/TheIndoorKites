@@ -33,11 +33,18 @@ class History < ActiveRecord::Base
 
 
 	def get_detailed_description()
+		if self.nil?
+			return "No event Description Avaliable"
 		case :event_type
 	      when "Company"
+	      	if self.company_id.nil?
+	      		return "No event Description Avaliable"	
+	      	end
 	      	company = Company.find(self.company_id)
-	        
 	      when "Mail"
+	      	if self.mail_id.nil?
+	      		return "No event description avaliable"
+	      	end
 	        mail = Mail.find(self.mail_id)
 	        eventDescription = "%s Mail with Tracking Id: %s" % [action,mail[:id]]
 	      when "Connection"
@@ -46,12 +53,13 @@ class History < ActiveRecord::Base
 	      	if self.nil? && self.connection_id.nil?
 	      		return "No Event Description Avaliable"
 	      	end
-		      	company = Company.find(connection[:company_id])
-		        eventDescription= "%s %s Connection:%s-%s" % [action,company.company_name,connection.location_one, connection.location_two]
-	      	
+		    company = Company.find(connection[:company_id])
+		    eventDescription= "%s %s Connection:%s-%s" % [action,company.company_name,connection.location_one, connection.location_two]
 	      when "Location"
+	      	if self.nil? && self.location_id.nil?
+	      		return "No Event Description Avaliable"
+	      	end
 	      	location = Location.find(self.location_id)
-	      	if location.nil?
 	        eventDescription = "%s KPS Distribution Centre %s" % [action,location[:name]]
 	      when "Price"
 	        eventDescription  = "%s Pricing" % [action]
