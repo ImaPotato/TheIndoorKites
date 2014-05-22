@@ -2,6 +2,7 @@ class BusinessController < ApplicationController
 
 	include HistoriesHelper
 
+	include GraphHelper
 
 	# GET /business
   def index
