@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20140521035908) do
     t.string   "priority"
     t.date     "send_date"
     t.date     "receive_date"
-    t.date     "max_delivery_date"
+    t.date     "max_delivery_time"
     t.decimal  "cost"
     t.string   "current_location"
     t.boolean  "international"

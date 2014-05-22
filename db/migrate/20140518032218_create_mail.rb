@@ -5,7 +5,6 @@ class CreateMail < ActiveRecord::Migration
       t.string :receiver
       t.string :to
       t.string :from
-      t.string :day
       t.decimal :weight
       t.decimal :volume
       t.string :priority
