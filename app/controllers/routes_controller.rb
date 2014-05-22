@@ -26,7 +26,18 @@ class RoutesController < ApplicationController
   # POST /routes.json
   def create
     @route = Route.new(route_params)
-    @route.connections << Connection.find()
+    conn = Array.new
+
+    #route[:connections] do |connection|
+    #  conn.push(Connection.find(connection.id))
+    #  puts connection
+    #end
+    params[:route][:connections_attributes].values.each do |connection|
+      conn.push(Connection.find(connection[:connection]))
+    end
+
+    @route.connections << conn
+
     respond_to do |format|
       if @route.save
         format.html { redirect_to @route, notice: 'Route was successfully created.' }
