@@ -30,37 +30,10 @@
         <% end %>
   </div>
 
-
-    <p><%= link_to_add_fields "Add Connection", f, :connections %></p>
-
-    <div style="display: none"></div>
-
-    <button id="open_lightbox">submit</button>
-
-  <div class="actions" style="display: none">
-    <%= link_to "add company", "#lightbox_submit", class: "fancybox", id: 'fan' %>
-    <div id="lightbox_submit">
-      <button id="submit_form">submit</button>
-    </div>
-  </div>
-  <div class="other-button"><%= f.submit %></div>
+    <div class="grey-button"> <%= link_to_add_fields "Add Connection", f, :connections %></div>
+  <div class="submit-button"><%= f.submit %></div>
 <% end %>
 
-<script type="text/javascript">
-    var ready = function() {
-        $('#open_lightbox').click(function(){
-            $('#fan').click();
-            return false;
-        });
-        $('#submit_form').click(function(){
-            $('form').submit();
-        });
-    };
-
-    $(document).ready(ready);
-    $(document).on('page:load', ready);
-
-</script>
 </div>
 
 
