@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 20140521035908) do
     t.datetime "updated_at"
   end
 
+  create_table "connections_routes", id: false, force: true do |t|
+    t.integer  "route_id"
+    t.integer  "connection_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "histories", force: true do |t|
     t.integer  "company_id"
     t.integer  "connection_id"
@@ -105,13 +112,6 @@ ActiveRecord::Schema.define(version: 20140521035908) do
 
   create_table "routes", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "connections_routes", id: false, force: true do |t|
-    t.integer  "route_id"
-    t.integer  "connection_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
