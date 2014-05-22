@@ -49,6 +49,9 @@ class History < ActiveRecord::Base
 	        mail = Mail.find(self.mail_id)
 	        eventDescription = "%s Mail with Tracking Id: %s" % [action,mail[:id]]
 	      when "Connection"
+	      	if self.connection_id.nil?
+	      		return "No event Description avaliable"
+	      	end
 	      	# get the connection and the company who owns it
 	      	connection = Connection.find(self.connection_id)
 	      	if self.nil? && self.connection_id.nil?

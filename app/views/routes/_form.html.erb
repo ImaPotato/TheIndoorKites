@@ -17,11 +17,12 @@
       <br/>
       <%= f.text_field :name %>
 
-      <%= f.fields_for :connections do |builder| %>
-        <%= render 'connection_fields', :f => builder %>
-      <% end %>
+      <%= f.collection_select :connection, @connections, :id, :location_one, :include_blank => 'Select a connection' %>
 
-      <%= link_to_add_fields("Add Connection", f, :connections) %>
+      <% @route.connections.each do |route| %>
+        <%= route.location_one %>
+      <% end %> 
+
       <div class="actions">
         <%= f.submit %>
       </div>

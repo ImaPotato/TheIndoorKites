@@ -40,7 +40,7 @@ class CompaniesController < ApplicationController
 			        set_history(new_location,HISTORY_EVENT_CREATED)
             end
           else
-            connection.location_one = connection.location_one_drop_down
+            connection.location_one  = connection.location_one_drop_down
           end
           if connection.location_two_drop_down.blank?
             if !Location.where(name: connection.location_two).exists?
@@ -52,7 +52,7 @@ class CompaniesController < ApplicationController
             connection.location_two = connection.location_two_drop_down
           end
           # add a history event for that connection
-          set_history(connection,HISTORY_EVENT_CREATED)
+       #   set_history(connection,HISTORY_EVENT_CREATED)
         end
       if @company.save
           # add an row to the history table that a company has been added
@@ -71,6 +71,7 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1.json
   def update
     respond_to do |format|
+    @company.update(company_params)
 
       @company.connections.each do |connection|
         if connection.location_one_drop_down.blank?
@@ -80,7 +81,7 @@ class CompaniesController < ApplicationController
             set_history(new_location,HISTORY_EVENT_CREATED)
           end
         else
-          connection.location_one = connection.location_one_drop_down
+          connection.location_one  = connection.location_one_drop_down
         end
         if connection.location_two_drop_down.blank?
           if !Location.where(name: connection.location_two).exists?
@@ -92,10 +93,10 @@ class CompaniesController < ApplicationController
           connection.location_two = connection.location_two_drop_down
         end
         # add a history event for that connection
-        set_history(connection,HISTORY_EVENT_CREATED)
+       # set_history(connection,HISTORY_EVENT_CREATED)
       end
 
-      if @company.update(company_params)
+      if @company.save
         set_history(@company,HISTORY_EVENT_UPDATED)
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
