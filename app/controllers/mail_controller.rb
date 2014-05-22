@@ -1,6 +1,8 @@
 class MailController < ApplicationController
   before_action :set_mail, only: [:show, :edit, :update, :destroy]
 
+   include HistoriesHelper
+
   # GET /mail
   # GET /mail.json
   def index
@@ -31,6 +33,8 @@ class MailController < ApplicationController
 
     respond_to do |format|
       if @mail.save
+         # add an row to the history table that a mail has been added
+        set_history(@mail, HISTORY_EVENT_CREATED)
         format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
         format.json { render action: 'show', status: :created, location: @mail }
       else
@@ -45,6 +49,14 @@ class MailController < ApplicationController
   def update
     respond_to do |format|
       if @mail.update(mail_params)
+        # if the mail hasn't been delievered
+        if(@mail[:receive_date].nil?)
+          # then set the event history to be an update on that mails position
+          set_history(@mail, HISTORY_EVENT_UPDATED)
+        else
+          # but if it has arrived then make a history event reflecting this
+          set_history(@mail, HISTORY_EVENT_MAIL_DELIVERED)
+        end
         format.html { redirect_to @mail, notice: 'Mail was successfully updated.' }
         format.json { head :no_content }
       else

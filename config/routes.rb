@@ -21,6 +21,7 @@ TheIndoorKites::Application.routes.draw do
   get "sign_up" => "users#new", :as => "sign_up"
   get "homepage" => "home#index", :as => "homepage"
   get "mail" => "mail#index", :as => "mail_page"
+  get "business" => "business#index", :as => "business"
 
   root :to => "home#index"
 
