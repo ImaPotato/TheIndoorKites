@@ -25,6 +25,7 @@
 .mail-card table {
 	margin: 0px 10px 0px 10px;
 	width: 100%;
+	border-collapse: collapse;
 }
 
 .mail-card thead {
@@ -47,8 +48,14 @@
 	text-align: center;
 }
 
-.shaded {
-	background-color: #EEEEEE;
+.list-row {
+	border: solid;
+	border-width: 2px 0px 2px 0px;
+	border-color: #EEEEEE;
+}
+
+.list-row:hover {
+	background-color: rgba(64, 102, 24, 0.3);
 }
 
 .mail-card .companies-button {
@@ -121,4 +128,44 @@
 
 .back-button a:hover {
 	background-color: #DDDDDD;
+}
+
+.mail-label {
+	text-transform: uppercase;
+	width: 150px;
+	
+	
+}
+
+.mail-view td {
+	float: left;
+}
+
+.mail-label a {
+	font-weight: 400;
+	float: right;
+}
+
+.mail-edit-button, .mail-back-button {
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 20px 10px;
+}
+
+.mail-edit-button a {
+	text-decoration: none;
+	padding: 5px 15px 5px 15px;
+	background-color: rgba(64, 102, 24, 0.8);
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+}	
+
+.mail-back-button a {
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
 }
