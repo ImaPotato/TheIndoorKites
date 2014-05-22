@@ -16,12 +16,10 @@
 //= require_tree .
 
 
-
-
-
+$ = jQuery;
 var ready = function(){
-	//$("a.fancybox").fancybox();
-	var currentId;
+	
+   // $("a.fancybox").fancybox();
 
     $('form').on('click', '.add_fields', (event), function(){
         time = new Date().getTime();

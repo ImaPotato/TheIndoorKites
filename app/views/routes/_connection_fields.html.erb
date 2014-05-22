@@ -1,0 +1,3 @@
+<div>
+	<%= f.select(:connection, Connection.all.collect {|a| [a.location_one + " to/from " + a.location_two, a.id ] }, :include_blank => 'Select a starting connection') %>
+</div>

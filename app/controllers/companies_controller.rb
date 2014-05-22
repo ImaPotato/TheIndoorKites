@@ -35,13 +35,14 @@ class CompaniesController < ApplicationController
         set_history(@company,HISTORY_EVENT_CREATED)
         
         @company.connections.each do |connection|
-
           if connection.location_one_drop_down.blank?
             if !Location.where(name: connection.location_one).exists?
               new_location = Location.new(:name => connection.location_one)
               new_location.save
 			        set_history(new_location,HISTORY_EVENT_CREATED)
             end
+          else
+            connection.location_one = connection.location_one_drop_down
           end
           if connection.location_two_drop_down.blank?
             if !Location.where(name: connection.location_two).exists?
@@ -49,6 +50,8 @@ class CompaniesController < ApplicationController
               new_location.save
               set_history(new_location,HISTORY_EVENT_CREATED)
             end
+          else
+            connection.location_two = connection.location_two_drop_down
           end
           # add a history event for that connection
           set_history(connection,HISTORY_EVENT_CREATED)
