@@ -13,7 +13,7 @@
         <td class = "open_event" , id = "<%= event.id %>"><%= event.event_details %></td>
         <td class = "open_event" , id = "<%= event.id %>"><%= event.event_time %></td>
       </tr>
-      <tr id = "id<%= event.id %>" , style = "display:show">
+      <tr id = "id<%= event.id %>" , style = "display:none">
         <td><%= render_event(event) %></td>
       <tr>
     <% end %>

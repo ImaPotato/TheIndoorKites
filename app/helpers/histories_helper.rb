@@ -34,7 +34,7 @@ module HistoriesHelper
 		      	puts event.company_id
 		      	render partial:"companies/show" , :locals => { :id => event.company_id}
 		      when "Mail"
-		        render 'mail/show' , :locals => { :id => event.company_id}
+		        render partial:"mail/show" , :locals => { :id => event.mail_id}
 		      when "Connection"
 		        #render 'connections/show' , @event.connection_id
 		      when "Location"
