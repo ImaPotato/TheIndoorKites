@@ -2,6 +2,7 @@ class BusinessController < ApplicationController
 
 	include HistoriesHelper
 
+
 	# GET /business
   def index
     #is_logged_in
