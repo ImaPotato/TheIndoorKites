@@ -25,6 +25,8 @@ class PricesController < ApplicationController
   def new
     is_logged_in
     @price = Price.new
+
+
   end
 
   # GET /prices/1/edit

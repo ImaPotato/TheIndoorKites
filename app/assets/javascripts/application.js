@@ -27,6 +27,7 @@ var ready = function(){
         $(this).before($(this).data('fields').replace(regexp, time))
         event.preventDefault();
     });
+    /*
 	$('.open_event').on("click",function(event){
 			$(currentId).hide(); 
 			var id = "#id" + event.target.id;
@@ -36,7 +37,7 @@ var ready = function(){
 	    	} else {
 	    		currentId = "";
 	    	}
-	});
+	}); */
 
 }
 

@@ -1,6 +1,5 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
-
   # GET /routes
   # GET /routes.json
   def index
@@ -25,13 +24,10 @@ class RoutesController < ApplicationController
   # POST /routes
   # POST /routes.json
   def create
+    
     @route = Route.new(route_params)
     conn = Array.new
 
-    #route[:connections] do |connection|
-    #  conn.push(Connection.find(connection.id))
-    #  puts connection
-    #end
     params[:route][:connections_attributes].values.each do |connection|
       conn.push(Connection.find(connection[:connection]))
     end
