@@ -7,7 +7,10 @@ module HistoriesHelper
     HISTORY_EVENT_MAIL_DELIVERED = "Delivered"
 
 	def string_for_event_time(event_time)
-		return event_time.strftime("%I:%M%p on %m/%d/%y")
+		if(!event_time.nil?)
+			return event_time.strftime("%I:%M%p on %m/%d/%y")
+		end
+		return "Date Unavaliable"
 	end
 
 	def path_for_event(event)
