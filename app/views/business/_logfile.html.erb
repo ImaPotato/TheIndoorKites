@@ -9,13 +9,15 @@
 
   <tbody>
     <% @events.each do |event| %>
-      <tr >
-        <td class = "open_event" , id = "<%= event.id %>"><%= event.event_details %></td>
-        <td class = "open_event" , id = "<%= event.id %>"><%= event.event_time %></td>
+
+      <tr class="logview-main-row" >
+        <td class="open_event" , id = "<%= event.id %>"><%= event.event_details %></td>
+        <td class="open_event" , id = "<%= event.id %>"><%= event.event_time %></td>
       </tr>
-      <tr id = "id<%= event.id %>" , style = "display:none">
-        <td><%= render_event(event) %></td>
-      <tr>
+
+      <tr class="event-drop-down" id = "id<%= event.id %>" , style = "display:none">
+        <td colspan="2" ><%= render_event(event) %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>

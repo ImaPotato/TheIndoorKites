@@ -1,0 +1,100 @@
+.business-card {
+	background-color: #fff;
+	margin: 5% 10% 5% 10%;
+	padding: 25px;
+	border: solid;
+	border-color: #CCC;
+	border-width: 0px 0px 2px 0px;
+}
+
+.business-card h1 {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-style: italic;
+	border: solid;
+	border-color: #DEDEDE;
+	border-width: 0px 0px 2px 0px;
+	padding: 0px 0px 10px 10px;
+	margin: 0px 0px 10px 0px;
+}
+
+.business-divisor {
+	width: 100%;
+}
+
+.business-divisor td {
+	vertical-align: top;
+}
+
+
+.business-logview table {
+	margin: 20px;
+	padding: 10px 10px 10px 10px;
+	border-collapse: collapse;
+}
+
+.business-logview th {
+	text-transform: uppercase;
+	font-weight: 400;
+	padding: 5px 0px 10px 10px;
+	text-align: center;
+}
+
+.logview-main-row:hover {
+	background-color: rgba(64, 102, 24, 0.3);
+}
+
+.business-logview .open_event {
+	padding: 10px;
+	border: solid;
+	border-width: 2px 0px 2px 0px;
+	border-color: #CDCDCD;		
+}
+
+.business-logview .event-drop-down {
+	background-color: #EDEDED;
+}
+
+.business-logview .event-drop-down td {
+	padding: 10px 15px 20px 15px;
+}
+
+.business-tabview {
+	vertical-align: top;
+}
+
+.tab-menu ul {
+	background-color: rgba(64, 102, 24, 0.6);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.tab-menu > ul { 
+	position: relative;
+}
+
+.tab-menu li {
+	display: inline-block;
+	*display: block;
+	vertical-align: middle;
+	position: relative;
+
+}
+
+
+.tab-menu a {
+	display: inline-block;
+	*display: block;
+	color: inherit;
+	line-height: 1.5em;
+	padding: 5px 15px;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	vertical-align: middle;
+}
+
+.tab-menu a:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}

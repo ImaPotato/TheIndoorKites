@@ -2,13 +2,15 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 
-    <div id="tabs">
+    <div>
+        <div class="tab-menu" id="tabs">
         <ul>
             <li><a id= "select_tab_1" title="">expenditure</a></li>
             <li><a id="select_tab_2" title="">revenue</a></li>
             <li><a id = "select_tab_3" title="">times</a></li>
-            <li><a id = "select_tab_4 title="">routes</a></li>
+            <li><a id = "select_tab_4" title="">routes</a></li>
         </ul>
+        </div>
         <div id="tabs_container">
             <div id="tab1">
                <%= render partial:"graphs/expenditure" %>
