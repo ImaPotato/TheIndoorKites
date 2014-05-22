@@ -4,19 +4,19 @@
 
 <div id="tabs">
     <ul>
-            <li><a href="#tabs-1" title="">Tab 1</a></li>
-            <li><a href="#tabs-2" title="">Tab 2</a></li>
-            <li><a href="#tabs-3" title="">Tab 3</a></li>
-        </ul>
+        <li><a id = "select_tab_1" title="">Tab 1</a></li>
+            <li><a id="select_tab_2" title="">Tab 2</a></li>
+            <li><a id="select_tab_3" title="">Tab 3</a></li>
+    </ul>
         <div id="tabs_container">
-            <div id="tabs-1">
-                <!--tab content-->
+            <div id="tab1">
+               <%= render partial:"graphs/expenditure" %>
             </div>
-            <div id="tabs-2">
-                   <!--tab content-->
+            <div id="tab2" style = "display:none">
+                tab two baby
             </div>
-            <div id="tabs-3">
-                    <!--tab content-->
+            <div id="tab3" style = "display:none">
+                you dawg this is page 3
             </div>
         </div><!--End tabs container--> 
   </div><!--End tabs-->
