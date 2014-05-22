@@ -5,44 +5,57 @@
 <% if !Price.count.zero? %>
   <table>
      <th>International</th>
-    <tr>
-        <td>Air Priority - $ Per Kilogram</td>
-        <td><%= @prices.i_air_w_cost %></td>
-    </tr>
-    <tr>
-        <td>Air Priority - $ per Cubic Metre</td>
+     <th></th>
+     <th width="20px"></th>
+     <th>Domestic</th>
+
+     <tr class="pricing-desc">
+       <td>Volume Cost</td>
+       <td>$ per Cubic Metre</td>
+     </tr>
+
+     <tr>
+        <td>Air</td> 
         <td><%= @prices.i_air_v_cost %></td>
+        <td class="pricing-spacer"></td>
+        <td>Air</td>
+        <td><%= @prices.d_air_v_cost %></td>
     </tr>
     <tr>
-        <td>Land Priority - $ Per Kilogram</td>
-        <td><%= @prices.i_land_w_cost %></td>
-    </tr>
-    <tr>
-        <td>Land Priority - $ Per Cubic Metre</td>
+        <td>Land</td>
         <td><%= @prices.i_land_v_cost %></td>
+        <td></td>
+        <td>Land</td>
+        <td><%= @prices.d_land_v_cost %></td>
     </tr>
 
-      <th>Domestic</th>
-      <tr>
-        <td>Air Priority - $ Per Kilogram</td>
+    <tr height="20px"></tr>
+
+    <tr class="pricing-desc">
+       <td>Weight Cost</td>
+       <td>$ Per Kilogram</td>
+     </tr>
+
+    <tr>
+        <td>Air</td>
+        <td><%= @prices.i_air_w_cost %></td>
+        <td></td>
+        <td>Air</td>
         <td><%= @prices.d_air_w_cost %></td>
-      </tr>
-      <tr>
-        <td>Air Priority - $ Per Cubic Metre</td>
-        <td><%= @prices.d_air_v_cost %></td>
-      </tr>
-      <tr>
-        <td>Land Priority - $ Per Kilogram</td>
+    </tr>
+    
+    <tr>
+        <td>Land</td>
+        <td><%= @prices.i_land_w_cost %></td>
+        <td></td>
+        <td>Land</td>
         <td><%= @prices.d_land_w_cost %></td>
-      </tr>
-      <tr>
-        <td>Land Priority - $ Per Cubic Metre</td>
-        <td><%= @prices.d_land_v_cost %></td>
-      </tr>
+    </tr>
+    
   </table>
 <% end %>
 <br />
 <!-- If we have a prices model then show edit priciing otherwise show a new price-->
-<%= link_to 'Manage Pricing', new_or_edit_price_path(@prices) %>
+<%= link_to 'Update Prices', new_or_edit_price_path(@prices) %>
 
 </div>
