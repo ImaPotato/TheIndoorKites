@@ -54,3 +54,54 @@
   text-shadow: 1px 1px 0 rgba(255,255,255,1.0);
   border: 1px solid #056329;
 }
+
+.pricing-form form input[type='submit'] {
+	display: inline-block;
+	text-decoration: none;
+	padding: 5px 15px 5px 15px;
+	background-color: rgba(64, 102, 24, 0.8);
+	text-transform: uppercase;
+	float: right;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	margin: 20px 20px 0px 10px;
+}
+
+.pricing-form form input[type='submit']:hover {
+	background-color: rgba(64, 102, 24, 0.7);
+}
+
+.green-button a {
+	display: inline-block;
+	*display: block;
+	text-decoration: none;
+	padding: 5px 15px 5px 15px;
+	background-color: rgba(64, 102, 24, 0.8);
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	margin: 10px 0px 0px 0px;
+}
+
+.green-button a:hover {
+	background-color: rgba(64, 102, 24, 0.7);
+}
+
+.grey-button a {
+	display: inline-block;
+	*display: block;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+	margin: 20px 0px 10px 10px;
+}
+
+.grey-button a:hover {
+	background-color: #DDDDDD;
+}
