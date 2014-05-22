@@ -2,6 +2,7 @@ class MailController < ApplicationController
   before_action :set_mail, only: [:show, :edit, :update, :destroy]
 
    include HistoriesHelper
+   include MailHelper
 
   # GET /mail
   # GET /mail.json
@@ -30,9 +31,11 @@ class MailController < ApplicationController
   # POST /mail.json
   def create
     @mail = Mail.new(mail_params)
+    route_id, @mail.cost = find_best_route_and_cost(@mail)
+    puts "*****\n\n\n The moment of Truth ******* \n\n\n\n" + @mail.cost.to_s
     puts mail_params
     respond_to do |format|
-      if @mail.save
+      if !(@mail.cost.nil?) && @mail.save
          # add an row to the history table that a mail has been added
         set_history(@mail, HISTORY_EVENT_CREATED)
         format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
