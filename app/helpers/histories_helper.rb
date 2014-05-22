@@ -39,7 +39,7 @@ module HistoriesHelper
 		      when "Location"
 		      	 render partial:"location/show" , :locals => { :id => event.location_id}
 		      when "Price"
-		        render partial:"price/show", :locals => { :id => event.price_id}
+		        render partial:"prices/show", :locals => { :id => event.price_id}
 		    end
 		end
 	end
