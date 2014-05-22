@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require fancybox
 //= require_tree .
+//= require chartkick
 
 
 $ = jQuery;
