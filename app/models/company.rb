@@ -4,4 +4,5 @@ class Company < ActiveRecord::Base
 
   accepts_nested_attributes_for :connections, allow_destroy: true, :reject_if => :all_blank
   accepts_nested_attributes_for :histories
+
 end

@@ -1,0 +1,9 @@
+<div>
+	<% connection = Connection.find(id) %>
+	<p>
+  	<strong>Connection name:</strong>
+  	<li><%= connection.location_one + " to " + connection.location_two %></li>
+  	<li><%= "Priority " + connection.priority%></li>
+  	<li><%= "Is utlized " + connection.utilised.to_s %></li>
+	</ol>
+</div>

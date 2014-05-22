@@ -30,7 +30,7 @@ class MailController < ApplicationController
   # POST /mail.json
   def create
     @mail = Mail.new(mail_params)
-
+    puts mail_params
     respond_to do |format|
       if @mail.save
          # add an row to the history table that a mail has been added
@@ -84,6 +84,6 @@ class MailController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mail_params
-      params.require(:mail).permit(:to, :from, :weight, :volume, :priority, :send_date, :receive_date, :max_delivery_date, :cost, :current_location)
+      params.require(:mail).permit(:sender,:receiver ,:to, :from, :weight, :volume, :priority, :send_date, :receive_date, :max_delivery_date, :cost, :current_location)
     end
 end

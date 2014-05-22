@@ -1,4 +1,4 @@
-<div>
+<div class="business-logview">
 <table>
   <thead>
     <tr>
@@ -14,7 +14,7 @@
         <td class = "open_event" , id = "<%= event.id %>"><%= event.event_time %></td>
       </tr>
       <tr id = "id<%= event.id %>" , style = "display:none">
-        <td>fkdhjhgdfkghkhghkghfdhgk</td>
+        <td><%= render_event(event) %></td>
       <tr>
     <% end %>
   </tbody>

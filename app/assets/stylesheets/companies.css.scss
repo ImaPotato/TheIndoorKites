@@ -25,9 +25,14 @@
 .companies-card table {
 	margin: 0px 10px 0px 0px;
 	padding: 10px 5px 10px 5px;
-	border-color: #CDCDCD;
+}
+
+.connections-form table {
+	margin: 0px 10px 0px 0px;
+	padding: 10px 5px 10px 5px;
 	border: solid;
-	border-width: 1px;
+	border-color: #DEDEDE;
+	border-width: 1px 0px 0px 0px;
 }
 
 .companies-card th {
@@ -84,8 +89,68 @@
   -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
 } 
 
-.companies-form button, input[type='submit'] {
+.companies-form input[type='submit'] {
 	padding: 5px 15px 5px 15px;
-	background-color: #CFCFCF;
+	background-color: rgba(64, 102, 24, 0.8);
 	text-transform: uppercase;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	float: right;
+	margin: 10px 20px 0px 0px;
+}
+
+.companies-form input[type='submit']:hover {
+	background-color: rgba(64, 102, 24, 0.7);
+}
+
+.add-button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+	margin: 10px 0px 0px 30px;
+}
+
+.other-button {
+	margin: 15px 0px 0px 30px;
+}
+
+.other-button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.add-button a:hover {
+	background-color: #DDDDDD;
+}
+
+.other-button a:hover {
+	background-color: #DDDDDD;
+}
+
+.add-companies-button {
+	margin: 10px 0px 10px 15px;
+}
+
+.add-companies-button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #000;
+	background-color: #CDCDCD;
+	padding: 5px 15px 5px 15px;
+	font-size: 15px;
+	font-weight: 400;
+}
+
+.add-companies-button a:hover {
+	background-color: #DDDDDD;
 }

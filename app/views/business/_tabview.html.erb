@@ -1,22 +1,27 @@
+<div class="business-tabview" >
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
-
-<div id="tabs">
-    <ul>
-            <li><a href="#tabs-1" title="">Tab 1</a></li>
-            <li><a href="#tabs-2" title="">Tab 2</a></li>
-            <li><a href="#tabs-3" title="">Tab 3</a></li>
+    <div id="tabs">
+        <ul>
+            <li><a id= "select_tab_1" title="">expenditure</a></li>
+            <li><a id="select_tab_2" title="">revenue</a></li>
+            <li><a id = "select_tab_3" title="">times</a></li>
+            <li><a id = "select_tab_4 title="">routes</a></li>
         </ul>
         <div id="tabs_container">
-            <div id="tabs-1">
-                <!--tab content-->
+            <div id="tab1">
+               <%= render partial:"graphs/expenditure" %>
             </div>
-            <div id="tabs-2">
-                   <!--tab content-->
+            <div id="tab2" style = "display:none">
+                tab two baby
             </div>
-            <div id="tabs-3">
+            <div id="tab3" style = "display:none">
+                you dawg this is page 3
+            </div>
+            <div id="tabs-4">
                     <!--tab content-->
             </div>
         </div><!--End tabs container--> 
-  </div><!--End tabs-->
+   </div><!--End tabs-->
+</div>

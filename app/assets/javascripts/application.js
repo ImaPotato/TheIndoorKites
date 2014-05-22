@@ -19,7 +19,9 @@
 $ = jQuery;
 var ready = function(){
 	
+	var currentId;
    // $("a.fancybox").fancybox();
+
 
     $('form').on('click', '.add_fields', (event), function(){
         time = new Date().getTime();
@@ -27,7 +29,6 @@ var ready = function(){
         $(this).before($(this).data('fields').replace(regexp, time))
         event.preventDefault();
     });
-    /*
 	$('.open_event').on("click",function(event){
 			$(currentId).hide(); 
 			var id = "#id" + event.target.id;
@@ -37,8 +38,23 @@ var ready = function(){
 	    	} else {
 	    		currentId = "";
 	    	}
-	}); */
-
+	});
+	// fragility strikes again!
+	$('#select_tab_1').on("click",function(event){
+		$("#tab1").show();
+		$("#tab2").hide();
+		$("#tab3").hide();
+	});
+	$('#select_tab_2').on("click",function(event){
+		$("#tab1").hide();
+		$("#tab2").show();
+		$("#tab3").hide();
+	});
+	$("#select_tab_3").on("click",function(event){
+		$("#tab1").hide();
+		$("#tab2").hide();
+		$("#tab3").show();
+	});
 }
 
 $(document).ready(ready);
