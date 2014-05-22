@@ -15,7 +15,7 @@
         <% end %>
     <% else %>
         <% if f.object.location_one_drop_down.blank? %>
-          <%= f.text_field :location_one, :readonly => true %>
+          <td><%= f.text_field :location_one, :readonly => true %></td>
         <% else %>
           <%= f.text_field :location_one_drop_down, :readonly => true %>
         <% end %>
@@ -35,7 +35,7 @@
         <% end %>
       <% else %>
         <%  if f.object.location_two_drop_down.blank? %>
-          <%= f.text_field :location_two, :readonly => true %>
+          <td><%= f.text_field :location_two, :readonly => true %></td>
         <% else %>
           <%= f.text_field :location_two_drop_down, :readonly => true %>
         <% end %>
@@ -45,31 +45,31 @@
 
   <tr>
     <td><%= f.label :weight_cost, "Weight Cost" %></td>
-    <td><%= f.text_field :weight_cost %></td>
+    <td><%= f.text_field :weight_cost, required: true %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :volume_cost, "Volume Cost" %></td>
-    <td><%= f.text_field :volume_cost %></td>
+    <td><%= f.text_field :volume_cost , required: true %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :max_weight, "Max Weight" %></td>
-    <td><%= f.text_field :max_weight %></td>
+    <td><%= f.text_field :max_weight, required: true %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :max_volume, "Max Volume" %></td>
-    <td><%= f.text_field :max_volume %></td>
+    <td><%= f.text_field :max_volume,required: true %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :duration, "Duration" %></td>
-    <td><%= f.text_field :duration %></td>
+    <td><%= f.text_field :duration,required: true %></td>
     <td></td>
   </tr>
 
@@ -81,20 +81,20 @@
 
   <tr>
     <td><%= f.label :priority, "Priority" %></td>
-    <td><%= f.text_field :priority %></td>
+    <td><%= f.text_field :priority,required: true %></td>
     <td></td>
   </tr>
 
   
   <tr>
     <td><%= f.label :day, "Day" %></td>
-    <td><%= f.text_field :day %></td>
+    <td><%= f.text_field :day,required: true %></td>
     <td></td>
   </tr>
 
   <tr>
     <td><%= f.label :utilised, "Utilised" %></td>
-    <td><%= f.check_box :utilised %></td>
+    <td><%= f.check_box :utilised%></td>
     <td></td>
   </tr>
 
