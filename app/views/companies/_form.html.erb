@@ -15,6 +15,7 @@
 
   <br>
 
+  <div class="company-name">
     <%= f.label :company_name %>
 
     <% if @company.new_record? %>
@@ -26,6 +27,7 @@
         <%= f.fields_for :connections do |builder| %>
           <%= render 'connection_fields', :f => builder %>
         <% end %>
+  </div>
 
 
     <p><%= link_to_add_fields "Add Connection", f, :connections %></p>
@@ -40,7 +42,7 @@
       <button id="submit_form">submit</button>
     </div>
   </div>
-  <%= f.submit %>
+  <div class="other-button"><%= f.submit %></div>
 <% end %>
 
 <script type="text/javascript">
