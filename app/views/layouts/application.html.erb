@@ -24,6 +24,11 @@
       <li>
         <%= link_to 'Business', business_path %>
       </li>
+      <% if !current_user.nil? && current_user.is_manager %>
+      <li>
+        <%= link_to 'Paths', path_path %>
+      </li>
+      <% end %>
     </ul>
     <ul id="menu-user-links">
       <% if current_user %>

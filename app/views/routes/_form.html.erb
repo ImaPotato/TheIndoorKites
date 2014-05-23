@@ -16,12 +16,17 @@
       <%= f.label :name, "Name" %>
       <br/>
       <%= f.text_field :name %>
+      <% connections_array = @connections.map { |connection| [connection.name_with_locations ,connection.id] } %>
+      <%=f.select :connection, options_for_select(connections_array) %>
 
-      <%= f.collection_select :connection, @connections, :id, :location_one, :include_blank => 'Select a connection' %>
+
 
       <% @route.connections.each do |route| %>
-        <%= route.location_one %>
+        <%= route.location_one.to_s + "-" + route.location_two.to_s %>
       <% end %> 
+
+
+
 
       <div class="actions">
         <%= f.submit %>

@@ -31,6 +31,7 @@ class RoutesController < ApplicationController
   def create
     @route = Route.new(route_params)
     new_connection = Array.new
+    puts "\n\n\n\n------\n\n\n\n" + params[:route].to_s + " ahhhh  " + params[:route][:connection].to_s + ' oh well'
     new_connection.push(Connection.find(params[:route][:connection]))
     @route.connections << new_connection
     @route.save
