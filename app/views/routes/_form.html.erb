@@ -9,7 +9,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+    <% end %>
 
     <div class="field">
       <br/>
@@ -17,19 +17,25 @@
       <br/>
       <%= f.text_field :name , required: true %>
       <br/>
-      <%= f.label :name, "Connection" %>
+        <% if !@connections.nil? %>
+        <%= f.label :name, "Connection" %>    
+        <br/>
+        <% connections_array = @connections.map { |connection| [connection.name_with_locations ,connection.id] } %>
+        <%=f.select :connection, options_for_select(connections_array),  inlcude_blank: "Choose one!", required: true %>
+        <% else %>
+           There are no more connections to add to this route.
+        <% end %>
       <br/>
-       <% connections_array = @connections.map { |connection| [connection.name_with_locations ,connection.id] } %>
-      <%=f.select :connection, options_for_select(connections_array),  inlcude_blank: "Choose one!", required: true %>
-
       <% @route.connections.each do |route| %>
-        <%= route.location_one.to_s + "-" + route.location_two.to_s %>
-      <% end %> 
+      <%= route.location_one.to_s + "-" + route.location_two.to_s %>
 
-
-      <div class="actions">
+      <% end %>
+        <div class="actions">
+          <% if !@connections.nil? %>
         <%= f.submit %>
+        <% end %>
       </div>
+      
     </div>
 
 <% end %>
