@@ -154,3 +154,31 @@
 .add-companies-button a:hover {
 	background-color: #DDDDDD;
 }
+
+.company-border {
+	border: solid;
+	border-color: #DFDFDF;
+	border-width: 2px 0px 0px 0px;
+}
+
+.company-bold {
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.edit-partial a {
+	padding: 5px 15px 5px 15px;
+	background-color: rgba(64, 102, 24, 0.8);
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	width: 35px;
+	text-decoration: none;
+	color: #fff;
+	margin-left: 30px;
+}
+
+.edit-partial a:hover {
+	background-color: rgba(64, 102, 24, 0.7);
+}

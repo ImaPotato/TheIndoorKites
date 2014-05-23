@@ -1,29 +1,39 @@
-<div>
+<div class="partial-mail">
 	<% mail = Mail.find(id) %>
 	<p id="notice"><%= notice %></p>
 
-	<p>
-	  <strong>To:</strong>
-	  <%= mail.to %>
-	</p>
+	<table>
+		
+		<tr>
+			<td class="mail-bold">destination</td>
+			<td><%= mail.to %></td>
+		</tr>
 
-	<p>
-	  <strong>From:</strong>
-	  <%= mail.from %>
-	</p>
-	<p>
-	  <strong>Priority:</strong>
-	  <%= mail.priority %>
-	</p>
-	<p>
-	  <strong>Cost:</strong>
-	  <%= mail.cost %>
-	</p>
+		<tr>
+			<td class="mail-bold">origin</td>
+			<td><%= mail.from %></td>
+		</tr>
 
-	<p>
-	  <strong>Current location:</strong>
-	  <%= mail.current_location %>
-	</p>
+		<tr>
+			<td class="mail-bold">priority</td>
+			<td><%= mail.priority %></td>
+		</tr>
 
-	<%= link_to 'Edit', edit_mail_path(mail) %>
+		<tr>
+			<td class="mail-bold">cost</td>
+			<td><%= mail.cost %></td>
+		</tr>
+
+		<tr>
+			<td class="mail-bold">current location</td>
+			<td><%= mail.current_location %></td>
+		</tr>
+
+		<tr>
+			<td class="mail-edit-button"><%= link_to 'Edit', edit_mail_path(mail) %></td
+		</tr>
+
+	</table>
+
+	
 </div>
