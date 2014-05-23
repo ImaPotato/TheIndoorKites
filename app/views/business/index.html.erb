@@ -4,7 +4,9 @@
 	<table class="business-divisor" >
 		<tr>
 			<td width= "45%"><%= render 'tabview' %></td>
+			        <% if current_user.is_manager %>
 			<td><%= render 'logfile' %></td>
+			<% end %>
 		</tr>
 	</table>
 
