@@ -36,7 +36,6 @@ module RoutesHelper
 	end
 
 	def is_not_duplicate?(ancestor, connections)
-
 		connections.each do |connection|
 			if connection.location_one == ancestor || connection.location_two == ancestor
 				return false
