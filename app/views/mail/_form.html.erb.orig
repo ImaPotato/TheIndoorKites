@@ -50,7 +50,11 @@
 
   <tr>
     <td><%= f.label :priority %></td>
+<<<<<<< HEAD
+    <td><%= f.select :priority, [['Air', 'Air'], ['Land', 'Land']], :include_blank => 'SELECT TRANSPORT', required: true %></td>
+=======
     <td><%= f.select :priority, [['Air', "Air"], ['Land', "Land"]], :include_blank => 'SELECT TRANSPORT', required: true %></td>
+>>>>>>> b1a9396d1887d80599d61a027371d10234716dec
   </tr>
 
   <tr>

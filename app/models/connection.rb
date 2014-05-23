@@ -6,4 +6,9 @@ class Connection < ActiveRecord::Base
   has_many :histories
   #accepts_nested_attributes_for :locations, allow_destroy: true
 
+
+  def name_with_locations
+    "#{self.location_one} - #{self.location_two}"
+  end
+
 end

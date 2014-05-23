@@ -22,6 +22,7 @@ TheIndoorKites::Application.routes.draw do
   get "homepage" => "home#index", :as => "homepage"
   get "mail" => "mail#index", :as => "mail_page"
   get "business" => "business#index", :as => "business"
+  get "path" => "routes#index", :as => "path"
 
   root :to => "home#index"
 
