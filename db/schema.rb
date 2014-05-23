@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20140521035908) do
     t.decimal  "cost"
     t.string   "current_location"
     t.boolean  "international"
+    t.integer  "route_id"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
