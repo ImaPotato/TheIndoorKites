@@ -1,5 +1,71 @@
 module MailHelper
 
+	#I feel dirty after writing this
+	def get_locations_from_route (current, final, route)
+
+		locations = Array.new
+		found_current = false
+		found_final = false
+		found_current_first = false
+		found_final_first = false
+		puts "\n\n\n\n\n\n\n\n\n\n" + current.to_s + " --------------------- " + final.to_s + "\n\n\n\n\n\n\n\n\n"
+		route.connections.each do |connection|
+			puts "\n\n\n\n\n\n\n\n\n\n" + found_current.to_s + " --------------------- " + found_final.to_s + "\n\n\n\n\n\n\n\n\n"
+			
+			if found_current == true
+				loc = find_common_ancestor locations.last, connection
+				locations.push(loc)
+				found_final = has_one? final, connection
+				if found_final 
+					return locations
+				end
+			elsif found_final == true
+				loc = find_common_ancestor locations.last, connection
+				locations.push(loc)
+				if found_current 
+					return locations.reverse
+				end
+			else
+				found_current = has_one? current, connection
+				found_final = has_one? final, connection
+
+				if found_final && found_current
+					locations.push(current)
+					locations.push(final)
+					return locations
+				end
+				if found_current
+					locations.push(current)
+					locations.push(find_common_ancestor(current,connection))
+				end
+				if found_final
+					locations.push(final)
+					locations.push(find_common_ancestor(final,connection))
+				end
+			end
+
+			return locations
+		end
+
+		if found_current && found_final
+			if found_current_first
+					return locations
+				else
+					return locations.reverse
+			end
+		end
+
+	end
+
+
+	def find_common_ancestor (location, connection)
+		if location == connection.location_one
+			return connection.location_two
+		else
+			return connection.location_one
+		end
+	end
+
 
 	def find_best_route_and_cost(mail)
 		# define map of route id to current vol price  
