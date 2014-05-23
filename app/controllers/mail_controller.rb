@@ -87,11 +87,10 @@ class MailController < ApplicationController
         end
 
         # if the mail hasn't been delievered
-        if(@mail.receive_date.nil?)
+        if(@mail.current_location != @mail.to)
           # then set the event history to be an update on that mails position
           set_history(@mail, HISTORY_EVENT_UPDATED)
         else
-
           # but if it has arrived then make a history event reflecting this
           set_history(@mail, HISTORY_EVENT_MAIL_DELIVERED)
         end
