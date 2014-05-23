@@ -16,7 +16,7 @@
         <%= link_to 'Mail', mail_page_path %>
       </li>
       <li>
-        <%= link_to 'Companies + Routes', companies_path %>
+        <%= link_to 'Companies + Connections', companies_path %>
       </li>
       <li>
         <%= link_to 'Pricing', prices_path %>
@@ -26,7 +26,7 @@
       </li>
       <% if !current_user.nil? && current_user.is_manager %>
       <li>
-        <%= link_to 'Paths', path_path %>
+        <%= link_to 'Routes', path_path %>
       </li>
       <% end %>
     </ul>
