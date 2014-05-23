@@ -45,7 +45,7 @@ input[type='text'] {
   border: 1px solid #DEDEDE;
 }
 
-input[type='submit'] {
+.home-card input[type='submit'] {
 	padding: 5px 10px 5px 10px;
 	margin: 0px 0px 0px 10px;
 	color: #fff;
@@ -53,7 +53,7 @@ input[type='submit'] {
 	background-color: rgba(64, 102, 24, 0.8);
 }
 
-input[type='submit']:hover {
+.home-card input[type='submit']:hover {
 	background-color: rgba(64, 102, 24, 0.7);
 }
 
