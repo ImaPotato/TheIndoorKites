@@ -73,10 +73,13 @@
     <td></td>
   </tr>
 
-  <tr>
-    <td><%= f.label :priority, "Priority" %></td>
-    <td><%= f.text_field :priority,required: true, placeholder:'Form of Transportation' %></td>
-    <td></td>
+ <tr>
+    <td><%= f.label :priority %></td>
+    <% if f.object.new_record? %>
+    <td><%= f.select :priority, [['Air', "Air"], ['Land', "Land"]], :include_blank => 'SELECT TRANSPORT', required: true %></td>
+    <% else %>
+    <td><%= f.text_field :priority, :readonly => true %></td>
+    <% end %>
   </tr>
 
   
