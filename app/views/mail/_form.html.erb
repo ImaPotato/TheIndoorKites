@@ -24,7 +24,7 @@
   <tr>
     <td><%= f.label :to %></td>
     <% if f.object.new_record? %>
-    <td><%= f.collection_select :to, Location.all, :name, :name, :include_blank => 'SELECT ORIGIN' , required: true %></td>
+    <td><%= f.collection_select :to, Location.all, :name, :name, :include_blank => 'Select Destination' , required: true %></td>
             <% else %>
     <td><%= f.text_field :to , :readonly => true%></td>
     <% end %>
@@ -33,7 +33,7 @@
   <tr>
     <td><%= f.label :from %></td>
     <% if f.object.new_record? %>
-    <td><%= f.collection_select :from, Location.all, :name, :name, :include_blank => 'SELECT DESTINATION' , required: true %></td>
+    <td><%= f.collection_select :from, Location.all, :name, :name, :include_blank => 'Select Origin' , required: true %></td>
         <% else %>
     <td><%= f.text_field :from , :readonly => true%></td>
     <% end %>

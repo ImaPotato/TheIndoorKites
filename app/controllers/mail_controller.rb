@@ -14,10 +14,12 @@ class MailController < ApplicationController
   # GET /mail/1
   # GET /mail/1.json
   def show
+    is_logged_in
   end
 
   # GET /mail/new
   def new
+    is_logged_in
     @mail = Mail.new
     @location = Location.all
     @price = Price.last
@@ -26,7 +28,7 @@ class MailController < ApplicationController
 
   # GET /mail/1/edit
   def edit
-
+    is_logged_in
     @mail = Mail.find(params[:id])
     @route = Route.find(@mail.route)
     if !@route.nil?
@@ -36,13 +38,13 @@ class MailController < ApplicationController
       @mail_locations.each do |magic|
         puts "*****\n\n\n The moment of --------------------------- Truth ******* \n\n\n\n" + magic.to_s
       end
-end
+    end
   end
 
   # POST /mail
   # POST /mail.json
   def create
-
+    is_logged_in
 
     @mail = Mail.new(mail_params)
     @mail.current_location = @mail.from
@@ -76,6 +78,7 @@ end
   # PATCH/PUT /mail/1
   # PATCH/PUT /mail/1.json
   def update
+    is_logged_in   
     respond_to do |format|
 
       if @mail.update(mail_params)
@@ -105,6 +108,7 @@ end
   # DELETE /mail/1
   # DELETE /mail/1.json
   def destroy
+    is_logged_in
     @mail.destroy
     respond_to do |format|
       format.html { redirect_to mail_index_url }

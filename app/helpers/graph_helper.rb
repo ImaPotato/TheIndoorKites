@@ -5,11 +5,6 @@ module GraphHelper
 		Mail.group_by_hour(:created_at).count
 	end
 
-	def get_expenditure_but_better
-		Mail.group_by_hour(:created_at).where().sum('cost')
-	end
-
-
 	def get_total_revenue
 		Mail.group_by_hour(:created_at).sum('price')
 	end
