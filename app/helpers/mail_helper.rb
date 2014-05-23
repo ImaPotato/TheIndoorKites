@@ -35,16 +35,21 @@ module MailHelper
 					return locations
 				end
 				if found_current
+					found_current_first = true
 					locations.push(current)
 					locations.push(find_common_ancestor(current,connection))
 				end
 				if found_final
+					found_final_first = true
 					locations.push(final)
 					locations.push(find_common_ancestor(final,connection))
 				end
 			end
-
-			return locations
+			if found_current_first
+				return locations
+			else
+				return locations.reverse
+			end
 		end
 
 		if found_current && found_final
