@@ -9,15 +9,22 @@
 	</tr>
 	  
 	<tr>
-		<td>
+		<td class="search-half">
+			<table class="search-table">
 			<form action='/search'>
+				<tr> <td>
 				<input name="query" type="text" />
 				<input type='submit' value='Search' />
+				</td>
+				</tr>
+				</table>
 				<%= render 'search' %>
+
 			</form>
+			
   		</td> 
   
-  		<td>
+  		<td class="noti-half">
 			<%= render 'notifications' %>
   		</td>
   	</tr>

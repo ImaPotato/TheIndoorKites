@@ -1,12 +1,17 @@
+<table class="search-table">
+
 <% if @company.empty? %>
-        <span>There were no results for your query</span><br/>
+        <tr class="home-main-row">
+        <td>There were no results for your query</td>
+        </tr>
 <% else %>
 	<% for company in @companies %>
 			
-
-			      <tr >
+		<tr class="home-main-row">
         <td><%= link_to company.company_name, edit_company_path(company) %></td>
+        </tr>
 
-      </tr>
 	<% end %>
 <% end %>
+
+</table>
