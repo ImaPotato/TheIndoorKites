@@ -38,7 +38,6 @@ class MailController < ApplicationController
 
     if !route_id.nil?
       @route = Route.find(route_id)
-
       @mail.price = get_mail_price(@mail)
 
       @route.mails.push(@mail)

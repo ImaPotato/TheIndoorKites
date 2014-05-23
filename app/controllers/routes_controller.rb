@@ -44,6 +44,8 @@ class RoutesController < ApplicationController
     respond_to do |format|
       connection_to_add =  Connection.find(params[:route][:connection])
 
+      if connection_to_add.priority == @route.connections.first.priority
+
       common_ancestor = find_common_location_of_connections connection_to_add, @route.connections.last
 
       if is_not_duplicate? common_ancestor, @route.connections
@@ -61,6 +63,7 @@ class RoutesController < ApplicationController
           else
             puts "\n\n\n\n\**********\n\n\nAhh fuck"
           end
+        end
       end
     end
 
