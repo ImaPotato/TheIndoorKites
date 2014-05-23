@@ -7,6 +7,7 @@ class MailController < ApplicationController
   # GET /mail
   # GET /mail.json
   def index
+    is_logged_in
     @mail = Mail.all
   end
 

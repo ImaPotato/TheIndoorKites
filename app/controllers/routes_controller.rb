@@ -6,6 +6,7 @@ class RoutesController < ApplicationController
   include RoutesHelper
 
   def index
+    is_logged_in
     @routes = Route.where("is_deleted = false OR is_deleted IS NULL")
   end
 
