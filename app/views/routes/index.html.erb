@@ -2,16 +2,12 @@
 <%= javascript_include_tag :defaults %>
 <h1>current routes</h1>
 
-<table>
-  <thead>
+<table class="main-table">
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>route</th>
+      <th colspan="3">distribution centers</th>
     </tr>
-  </thead>
 
-  <tbody>
     <% @routes.each do |route| %>
       <tr>
         <td>
@@ -20,17 +16,16 @@
         <td>
           <%= get_route_as_string(route.connections) %>
         </td>
+        <td class="grey-button"><%= link_to 'manage', edit_route_path(route) %></td>
+        <td class="grey-button"><%= link_to 'Remove', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <tr>
-      <tr>
-        <td><%= link_to 'Update Or Add To', edit_route_path(route) %></td>
-        <td><%= link_to 'Remove', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+
     <% end %>
-  </tbody>
+
 </table>
 
 <br>
 
-<%= link_to 'New Route', new_route_path %>
+<div class="green-button"><%= link_to 'New Route', new_route_path %></div>
 
 </div>
