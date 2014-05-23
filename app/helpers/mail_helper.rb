@@ -126,4 +126,35 @@ module MailHelper
 		has_both
 	end
 
+	def get_mail_price(mail)
+
+		price = Price.last
+		volume_cost = 0
+		weight_cost = 0
+
+		if mail.priority == 'Air'
+			if mail.international == true
+				volume_cost = price.i_air_v_cost * mail.volume
+				weight_cost = price.i_air_w_cost * mail.weight
+			else
+				volume_cost = price.d_air_v_cost * mail.volume
+				weight_cost = price.d_air_w_cost * mail.weight
+			end
+		else
+			if mail.international == true
+				volume_cost = price.i_land_v_cost * mail.volume
+				weight_cost = price.i_land_w_cost * mail.weight
+			else
+				volume_cost = price.d_land_v_cost * mail.volume
+				weight_cost = price.d_land_w_cost * mail.weight
+			end
+		end
+
+		if volume_cost > weight_cost
+			return volume_cost
+		else
+			return weight_cost
+		end
+	end
+
 end

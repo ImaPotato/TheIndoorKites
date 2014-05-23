@@ -30,10 +30,23 @@ class MailController < ApplicationController
   # POST /mail
   # POST /mail.json
   def create
+
+
     @mail = Mail.new(mail_params)
+
     route_id, @mail.cost = find_best_route_and_cost(@mail)
+
+    if !route_id.nil?
+      @route = Route.find(route_id)
+
+      @mail.price = get_mail_price(@mail)
+
+      @route.mails.push(@mail)
+    end
+    
     puts "*****\n\n\n The moment of Truth ******* \n\n\n\n" + @mail.cost.to_s
     puts mail_params
+
     respond_to do |format|
       if !(@mail.cost.nil?) && @mail.save
          # add an row to the history table that a mail has been added

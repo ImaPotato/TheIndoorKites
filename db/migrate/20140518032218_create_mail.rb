@@ -14,6 +14,8 @@ class CreateMail < ActiveRecord::Migration
       t.decimal :cost
       t.string :current_location
       t.boolean :international
+      t.integer :route_id
+      t.decimal :price
 
       t.timestamps
     end
