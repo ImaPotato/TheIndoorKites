@@ -15,17 +15,18 @@
       <br/>
       <%= f.label :name, "Name" %>
       <br/>
-      <%= f.text_field :name %>
+      <%= f.text_field :name , required: true %>
       <% connections_array = @connections.map { |connection| [connection.name_with_locations ,connection.id] } %>
-      <%=f.select :connection, options_for_select(connections_array) %>
+      <br/>
+      <%= f.label :name, "Connection" %>
+      <br/>
+      <%=f.select :connection, options_for_select(connections_array),  inlcude_blank: "Choose one!", required: true %>
 
 
 
       <% @route.connections.each do |route| %>
         <%= route.location_one.to_s + "-" + route.location_two.to_s %>
       <% end %> 
-
-
 
 
       <div class="actions">
