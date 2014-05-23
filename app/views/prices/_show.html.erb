@@ -8,7 +8,7 @@
 	  <%= @price.i_air_v_cost %>
 	</p>
 	<p>
-	  <strong>Air: $ per kilogram:</strong>
+	  <strong>Air: $ per gram:</strong>
 	  <%= @price.i_air_w_cost %>
 	</p>
 	<p>
@@ -16,57 +16,25 @@
 	  <%= @price.i_land_v_cost %>
 	</p>
 	<p>
-	  <strong>Land/Sea: $ per per kilogram:</strong>
+	  <strong>Land/Sea: $ per per gram:</strong>
 	  <%= @price.i_land_w_cost %>
 	</p>
+    <strong>Domestic</strong>
+    <p>
+      <strong>Air: $ per cubic cm:</strong>
+      <%= @price.d_air_v_cost %>
+    </p>
+    <p>
+      <strong>Air: $ per gram:</strong>
+      <%= @price.d_air_w_cost %>
+    </p>
+    <p>
+      <strong>Land/Sea: $ per cubic cm:</strong>
+      <%= @price.d_land_v_cost %>
+    </p>
+    <p>
+      <strong>Land/Sea: $ per per gram:</strong>
+      <%= @price.d_land_w_cost %>
+    </p>
 
-	<p>
-	  <strong>Current location:</strong>
-	  <%= mail.current_location %>
-	</p>
-
-	<%= link_to 'Edit', edit_mail_path(mail) %>
-
-<table>
-     <th>International</th>
-     <th>Domestic</th>
-
-     <tr class="pricing-desc">
-       <td>Volume Cost</td>
-       <td>$ per Cubic Metre</td>
-     </tr>
-
-     <tr>
-        <td>Air</td> 
-        <td><%= @prices.i_air_v_cost %></td>
-        <td>Air</td>
-        <td><%= @prices.d_air_v_cost %></td>
-    </tr>
-    <tr>
-        <td>Land</td>
-        <td><%= @prices.i_land_v_cost %></td>
-        <td>Land</td>
-        <td><%= @prices.d_land_v_cost %></td>
-    </tr>
-
-
-    <tr class="pricing-desc">
-       <td>Weight Cost</td>
-       <td>$ Per Kilogram</td>
-     </tr>
-
-    <tr>
-        <td>Air</td>
-        <td><%= @prices.i_air_w_cost %></td>
-        <td>Air</td>
-        <td><%= @prices.d_air_w_cost %></td>
-    </tr>
-    
-    <tr>
-        <td>Land</td>
-        <td><%= @prices.i_land_w_cost %></td>
-        <td>Land</td>
-        <td><%= @prices.d_land_w_cost %></td>
-    </tr>
-    
-  </table>
+	<%= link_to 'Edit', edit_price_path(@price) %>
