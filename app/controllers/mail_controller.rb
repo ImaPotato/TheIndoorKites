@@ -66,10 +66,9 @@ end
          # add an row to the history table that a mail has been added
         set_history(@mail, HISTORY_EVENT_CREATED)
         format.html { redirect_to @mail, notice: 'Mail was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @mail }
       else
+        flash.now.alert =  "Mail wasn't saved, There is no path between locations that matches the mail's priority or contains both the origin and destination. Only a manager can add paths, they will do so via the 'path' tab"
         format.html { render action: 'new' }
-        format.json { render json: @mail.errors, status: :unprocessable_entity }
       end
     end
   end
