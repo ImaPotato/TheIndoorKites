@@ -13,22 +13,26 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
+    is_logged_in
   end
 
   # GET /companies/new
   def new
+    is_logged_in
     @company = Company.new
     @priorities = Priority.all
   end
 
   # GET /companies/1/edit
   def edit
+    is_logged_in
     @priorities = Priority.all
   end
 
   # POST /companies
   # POST /companies.json
   def create
+    is_logged_in
     @company = Company.new(company_params)
     respond_to do |format|
 
@@ -71,6 +75,7 @@ class CompaniesController < ApplicationController
   # PATCH/PUT /companies/1
   # PATCH/PUT /companies/1.json
   def update
+    is_logged_in
     respond_to do |format|
     @company.update(company_params)
 
@@ -111,6 +116,7 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
+    is_logged_in
     @company.destroy
     respond_to do |format|
       format.html { redirect_to companies_url }

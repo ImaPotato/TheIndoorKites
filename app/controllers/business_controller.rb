@@ -6,6 +6,7 @@ class BusinessController < ApplicationController
 
 	# GET /business
   def index
+    is_logged_in
     #is_logged_in
    	@events = History.order("created_at DESC").limit(10)
 

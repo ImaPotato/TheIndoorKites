@@ -13,10 +13,12 @@ class RoutesController < ApplicationController
   # GET /routes/1
   # GET /routes/1.json
   def show
+    is_logged_in
   end
 
   # GET /routes/new
   def new
+    is_logged_in
     @route = Route.new
     @route.connections = Array.new
     @connections = Connection.all
@@ -24,12 +26,14 @@ class RoutesController < ApplicationController
 
   # GET /routes/1/edit
   def edit
+    is_logged_in
     @connections = Connection.all - @route.connections
   end
 
   # POST /routes
   # POST /routes.json
   def create
+    is_logged_in
     @route = Route.new(route_params)
     new_connection = Array.new
     puts "\n\n\n\n------\n\n\n\n" + params[:route].to_s + " ahhhh  " + params[:route][:connection].to_s + ' oh well'
@@ -42,6 +46,7 @@ class RoutesController < ApplicationController
   # PATCH/PUT /routes/1
   # PATCH/PUT /routes/1.json
   def update
+    is_logged_in
     did_update = false
 
     respond_to do |format|
@@ -85,6 +90,7 @@ class RoutesController < ApplicationController
   # DELETE /routes/1
   # DELETE /routes/1.json
   def destroy
+    is_logged_in
     puts "\n\nn\\n\n\n\nnahhhhhhhh"
     puts "\n\najffh: "  + (Mail.where("route_id = ? AND receive_date is NULL", @route.id).blank?).to_s
  
