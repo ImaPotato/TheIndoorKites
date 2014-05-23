@@ -44,4 +44,19 @@ module RoutesHelper
 		true
 	end
 
+	def get_route_as_string(connections)
+		route_set = Set.new
+		#cheeky string build
+		cheeky_string = ""
+		connections.each do |connection|
+			route_set.add(connection.location_one)
+			route_set.add(connection.location_two)
+		end	
+
+		route_set.each do |location_string|
+			cheeky_string += " " + location_string
+		end
+		cheeky_string
+	end
+
 end

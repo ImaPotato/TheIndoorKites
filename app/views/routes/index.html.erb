@@ -17,11 +17,13 @@
         <td>
          <%= route.name %>
         </td>
+        <td>
+          <%= get_route_as_string(route.connections) %>
+        </td>
       <tr>
       <tr>
-        <td><%= link_to 'Show', route %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Update Or Add To', edit_route_path(route) %></td>
+        <td><%= link_to 'Remove', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
