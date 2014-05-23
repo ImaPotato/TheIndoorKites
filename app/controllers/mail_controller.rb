@@ -25,6 +25,17 @@ class MailController < ApplicationController
 
   # GET /mail/1/edit
   def edit
+
+    @mail = Mail.find(params[:id])
+    @route = Route.find(@mail.route)
+    if !@route.nil?
+      puts "made it this far" + @mail.current_location.to_s + @mail.to.to_s
+      @mail_locations = get_locations_from_route(@mail.current_location, @mail.to, @route)
+
+      @mail_locations.each do |magic|
+        puts "*****\n\n\n The moment of --------------------------- Truth ******* \n\n\n\n" + magic.to_s
+      end
+end
   end
 
   # POST /mail
@@ -33,14 +44,17 @@ class MailController < ApplicationController
 
 
     @mail = Mail.new(mail_params)
-
+    @mail.current_location = @mail.from
     route_id, @mail.cost = find_best_route_and_cost(@mail)
 
     if !route_id.nil?
+
       @route = Route.find(route_id)
+
       @mail.price = get_mail_price(@mail)
 
       @route.mails.push(@mail)
+
     end
     
     puts "*****\n\n\n The moment of Truth ******* \n\n\n\n" + @mail.cost.to_s
@@ -64,11 +78,15 @@ class MailController < ApplicationController
   def update
     respond_to do |format|
       if @mail.update(mail_params)
+        if @mail.current_location = @mail.to
+           @mail.receive_date = DateTime.now
+        end
         # if the mail hasn't been delievered
-        if(@mail[:receive_date].nil?)
+        if(@mail.receive_date.nil?)
           # then set the event history to be an update on that mails position
           set_history(@mail, HISTORY_EVENT_UPDATED)
         else
+
           # but if it has arrived then make a history event reflecting this
           set_history(@mail, HISTORY_EVENT_MAIL_DELIVERED)
         end

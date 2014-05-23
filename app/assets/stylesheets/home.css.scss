@@ -19,24 +19,20 @@
 }
 
 .home-card table {
-	margin: 0px 10px 0px 10px;
 	width: 100%;
+	padding: 0px 30px 0px 20px;
+	vertical-align: top;
 }
+
 
 .home-card th {
 	text-transform: uppercase;
-	font-weight: 400;
-	padding: 5px 5px 15px 0px;
+	text-align: center;
+	padding: 10px 0px;
 }
 
-.home-card form label {
-	text-transform: uppercase;
-	width: 150px;
-	float: left;
-	text-align: right;
-	margin-right:  3em;
-	display: inline-block;
-	padding: 10px 0 0;
+.home-card td {
+	vertical-align: top;
 }
 
 .home-card form input[type='text'] {
@@ -52,4 +48,36 @@
 
 .home-card form input[type='submit'] {
 	padding: 10px 10px 10px 10px;
+}
+
+.home-logview table {
+	margin: 20px;
+	padding: 10px 10px 10px 10px;
+	border-collapse: collapse;
+}
+
+.home-logview th {
+	text-transform: uppercase;
+	font-weight: 400;
+	padding: 5px 0px 10px 10px;
+	text-align: center;
+}
+
+.home-main-row:hover {
+	background-color: rgba(64, 102, 24, 0.3);
+}
+
+.home-logview .open_event, .home-main-row td {
+	padding: 10px;
+	border: solid;
+	border-width: 2px 0px 2px 0px;
+	border-color: #CDCDCD;		
+}
+
+.home-logview .event-drop-down {
+	background-color: #EDEDED;
+}
+
+.home-logview .event-drop-down td {
+	padding: 10px 15px 20px 15px;
 }

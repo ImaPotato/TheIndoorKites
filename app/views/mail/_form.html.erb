@@ -15,60 +15,110 @@
     
   <tr>
     <td><%= f.label :sender %></td>
+     <% if f.object.new_record? %>
     <td><%= f.text_field :sender , required: true, placeholder:'Senders Name' %></td>
+                <% else %>
+    <td><%= f.text_field :sender , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :receiver %></td>
+     <% if f.object.new_record? %>
     <td><%= f.text_field :receiver , required: true, placeholder:'Reciever Name'%></td>
+                <% else %>
+    <td><%= f.text_field :receiver , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :to %></td>
+    <% if f.object.new_record? %>
     <td><%= f.collection_select :to, Location.all, :name, :name, :include_blank => 'SELECT ORIGIN' , required: true %></td>
+            <% else %>
+    <td><%= f.text_field :to , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :from %></td>
+    <% if f.object.new_record? %>
     <td><%= f.collection_select :from, Location.all, :name, :name, :include_blank => 'SELECT DESTINATION' , required: true %></td>
+        <% else %>
+    <td><%= f.text_field :from , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
+   
     <td><%= f.label :international, "International" %></td>
+     <% if f.object.new_record? %>
     <td><%= f.check_box :international %></td>
+            <% else %>
+    <td><%= f.text_field :international , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :weight %></td>
+     <% if f.object.new_record? %>
     <td><%= f.text_field :weight, placeholder:'grams' %></td>
+                <% else %>
+    <td><%= f.text_field :weight , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :volume %></td>
+    <% if f.object.new_record? %>
     <td><%= f.text_field :volume, placeholder:'cm³' %></td>
+                    <% else %>
+    <td><%= f.text_field :volume , :readonly => true%></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :priority %></td>
+    <% if f.object.new_record? %>
     <td><%= f.select :priority, [['Air', "Air"], ['Land', "Land"]], :include_blank => 'SELECT TRANSPORT', required: true %></td>
+    <% else %>
+    <td><%= f.text_field :priority, :readonly => true %></td>
+    <% end %>
   </tr>
 
   <tr>
     <td><%= f.label :send_date %></td>
+    <% if f.object.new_record? %>
     <td><%= f.date_select :send_date, required: true %></td>
+        <% else %>
+      <td><%= f.text_field :send_date, :readonly => true %></td>
+    <% end %>
   </tr>
 
   <% if !@mail.new_record? %>
+
       <tr>
-        <td><%= f.label :receive_date %></td>
-        <td><%= f.date_select :receive_date , required: true%></td>
+        <td><%= f.label :receive_date%></td>
+        <td><%= f.text_field :receive_date, :readonly => true %></td>
       </tr>
 
+      <tr>
+        <td><%= f.label :current_location %></td>
+        <% if @mail.to != @mail.current_location %>
+      <td><%= f.select :current_location, @mail_locations.map {|location|[location, location]} %></td>
+      <% else %>
+      <td><%= f.text_field :current_location, :readonly => true %></td>
+      <% end %>
+</tr>
   <% end %>
 
   <tr>
     <td><%= f.label :max_delivery_time  %></td>
+    <% if f.object.new_record? %>
     <td><%= f.date_select :max_delivery_time , required: true%></td>
+    <% else %>
+    <td><%= f.text_field :max_delivery_time, :readonly => true %></td>
+    <% end %>
   </tr>
 
   <tr>
