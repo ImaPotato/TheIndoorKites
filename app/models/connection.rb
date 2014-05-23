@@ -8,7 +8,7 @@ class Connection < ActiveRecord::Base
 
 
   def name_with_locations
-    "#{self.location_one} - #{self.location_two} - #{self.priority} -" + Company.find(self.company_id).company_name
+    "#{self.location_one} - #{self.location_two} #{self.priority}"
   end
 
 end

@@ -6,6 +6,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
+    is_logged_in
     @companies = Company.all
   end
 

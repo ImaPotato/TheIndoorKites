@@ -31,7 +31,7 @@ module GraphHelper
 	end
 
 	def get_critical_routes
-		Routes.all.map{|route|{name: route.name, data: route.mail.group_by_hour(:created_at).count()}}
+		Route.all.map{|route|{name: route.name, data: Mail.where(route_id: route.id).group_by_hour(:created_at).count()}}
 	end	
 
 end

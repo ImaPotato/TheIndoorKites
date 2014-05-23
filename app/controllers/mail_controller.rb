@@ -7,6 +7,7 @@ class MailController < ApplicationController
   # GET /mail
   # GET /mail.json
   def index
+    is_logged_in
     @mail = Mail.all
   end
 
@@ -77,10 +78,12 @@ end
   # PATCH/PUT /mail/1.json
   def update
     respond_to do |format|
+
       if @mail.update(mail_params)
         if @mail.current_location = @mail.to
            @mail.receive_date = DateTime.now
         end
+
         # if the mail hasn't been delievered
         if(@mail.receive_date.nil?)
           # then set the event history to be an update on that mails position
@@ -90,6 +93,7 @@ end
           # but if it has arrived then make a history event reflecting this
           set_history(@mail, HISTORY_EVENT_MAIL_DELIVERED)
         end
+        @mail.save
         format.html { redirect_to @mail, notice: 'Mail was successfully updated.' }
         format.json { head :no_content }
       else
