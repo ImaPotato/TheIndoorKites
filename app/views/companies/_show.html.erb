@@ -7,7 +7,7 @@
 	<ol>
 	  	<% company.connections.each do |conn| %>
 	  	<li><%= conn.location_one + " to " + conn.location_two %></li>
-  		<li><%= "$ per kg " + conn.weight_cost.to_s %>
+  		<li><%= "$ per g " + conn.weight_cost.to_s %>
   		<li><%= "$ per cubic metres " + conn.volume_cost.to_s %> 
   	<% end %>
 	</ol>
