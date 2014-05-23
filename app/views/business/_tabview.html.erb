@@ -5,24 +5,24 @@
     <div>
         <div class="tab-menu" id="tabs">
         <ul>
-            <li><a id= "select_tab_1" title="">expenditure</a></li>
-            <li><a id="select_tab_2" title="">revenue</a></li>
+            <li><a id = "select_tab_1" title="">revenues</a></li>
+            <li><a id = "select_tab_2" title="">totals</a></li>
             <li><a id = "select_tab_3" title="">times</a></li>
             <li><a id = "select_tab_4" title="">routes</a></li>
         </ul>
         </div>
         <div id="tabs_container">
-            <div id="tab1">
+            <div id="tab1" style = "display:none">
                <%= render partial:"graphs/expenditure" %>
             </div>
             <div id="tab2" style = "display:none">
-                tab two baby
+                <%= render partial:"graphs/revenue" %>
             </div>
             <div id="tab3" style = "display:none">
-                you dawg this is page 3
+                <%= render partial:"graphs/routes" %>
             </div>
-            <div id="tabs-4">
-                    <!--tab content-->
+            <div id="tab4" style = "display:none">
+                <%= render partial:"graphs/times" %>
             </div>
         </div><!--End tabs container--> 
    </div><!--End tabs-->

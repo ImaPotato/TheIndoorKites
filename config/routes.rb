@@ -24,6 +24,8 @@ TheIndoorKites::Application.routes.draw do
   get "business" => "business#index", :as => "business"
   get "path" => "routes#index", :as => "path"
 
+  get "search" => "home#index" 
+
   root :to => "home#index"
 
 

@@ -1,0 +1,12 @@
+<% if @company.empty? %>
+        <span>There were no results for your query</span><br/>
+<% else %>
+	<% for company in @companies %>
+			
+
+			      <tr >
+        <td><%= link_to company.company_name, edit_company_path(company) %></td>
+
+      </tr>
+	<% end %>
+<% end %>

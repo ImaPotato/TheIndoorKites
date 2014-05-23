@@ -47,16 +47,25 @@ var ready = function(){
 		$("#tab1").show();
 		$("#tab2").hide();
 		$("#tab3").hide();
+		$("#tab4").hide();
 	});
 	$('#select_tab_2').on("click",function(event){
 		$("#tab1").hide();
 		$("#tab2").show();
 		$("#tab3").hide();
+		$("#tab4").hide();
 	});
 	$("#select_tab_3").on("click",function(event){
 		$("#tab1").hide();
 		$("#tab2").hide();
 		$("#tab3").show();
+		$("#tab4").hide();
+	});
+	$("#select_tab_4").on("click",function(event){
+		$("#tab1").hide();
+		$("#tab2").hide();
+		$("#tab3").hide();
+		$("#tab4").show();
 	});
 }
 
