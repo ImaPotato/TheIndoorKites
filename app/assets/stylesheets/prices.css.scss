@@ -105,3 +105,21 @@
 .grey-button a:hover {
 	background-color: #DDDDDD;
 }
+
+.partial-pricing {
+	vertical-align: middle;
+	padding: 10px;
+}
+
+.partial-pricing .pricing-key {
+	font-style: italic;
+	font-weight: 300;
+	font-size: 15px;
+	border: solid;
+	border-width: 2px 0px 2px 0px;
+	border-color: #CDCDCD;
+}
+
+.partial-pricing .green-button {
+	margin: 0px 0px 0px 0px;
+}
