@@ -82,46 +82,25 @@
   
   <tr>
     <td><%= f.label :day, "Day" %></td>
-    <td><%= f.text_field :day,required: true, placeholder:'Day of departure' %></td>
-    <td></td>
-  </tr>
-
-    <tr>
-    <td><%= f.label :monday, "Monday" %></td>
+    <td class="checkbox-table" colspan="3">
+    <table> <tr>
+    <td>M</td>
     <td><%= f.check_box :monday%></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><%= f.label :tuesday, "Tuesday" %></td>
+    <td>T</td>
     <td><%= f.check_box :tuesday%></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><%= f.label :wednesday, "Wednesday" %></td>
+    <td>W</td>
     <td><%= f.check_box :wednesday %></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><%= f.label :thursday, "Thursday" %></td>
+    <td>T</td>
     <td><%= f.check_box :thursday %></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><%= f.label :friday, "Friday" %></td>
+    <td>F</td>
     <td><%= f.check_box :friday%></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><%= f.label :saturday, "Saturday" %></td>
+    <td>S</td>
     <td><%= f.check_box :saturday%></td>
-    <td></td>
-  </tr>
-    <tr>
-    <td><%= f.label :sunday, "Sunday" %></td>
+    <td>S</td>
     <td><%= f.check_box :sunday%></td>
-    <td></td>
+    </tr></table>
+    </td>
   </tr>
-
   <tr>
     <td><%= f.label :utilised, "Utilised" %></td>
     <td><%= f.check_box :utilised%></td>

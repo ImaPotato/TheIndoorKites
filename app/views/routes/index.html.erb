@@ -1,4 +1,6 @@
-<h1>Listing routes</h1>
+<div class="routes-card" >
+<%= javascript_include_tag :defaults %>
+<h1>current routes</h1>
 
 <table>
   <thead>
@@ -12,6 +14,11 @@
   <tbody>
     <% @routes.each do |route| %>
       <tr>
+        <td>
+         <%= route.name %>
+        </td>
+      <tr>
+      <tr>
         <td><%= link_to 'Show', route %></td>
         <td><%= link_to 'Edit', edit_route_path(route) %></td>
         <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -23,3 +30,5 @@
 <br>
 
 <%= link_to 'New Route', new_route_path %>
+
+</div>

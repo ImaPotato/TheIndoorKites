@@ -2,71 +2,62 @@
 
 <p id="notice"><%= notice %></p>
 
-	<strong>International</strong>
-	<p>
-	  <strong>Air: $ per cubic cm:</strong>
-	  <%= @price.i_air_v_cost %>
-	</p>
-	<p>
-	  <strong>Air: $ per kilogram:</strong>
-	  <%= @price.i_air_w_cost %>
-	</p>
-	<p>
-	  <strong>Land/Sea: $ per cubic cm:</strong>
-	  <%= @price.i_land_v_cost %>
-	</p>
-	<p>
-	  <strong>Land/Sea: $ per per kilogram:</strong>
-	  <%= @price.i_land_w_cost %>
-	</p>
 
-	<p>
-	  <strong>Current location:</strong>
-	  <%= mail.current_location %>
-	</p>
-
-	<%= link_to 'Edit', edit_mail_path(mail) %>
+<div class="partial-pricing" >
 
 <table>
-     <th>International</th>
-     <th>Domestic</th>
+	<tr>
+		<th colspan="2">International</th>
+		<th colspan="2">Domestic</th>
+	</tr>
 
-     <tr class="pricing-desc">
-       <td>Volume Cost</td>
-       <td>$ per Cubic Metre</td>
-     </tr>
+	<tr class="pricing-key" >
+		<td>Weight</td>
+		<td>NZD/g</td>
+		<td>Weight</td>
+		<td>NZD/g</td>
+	</tr>
 
-     <tr>
-        <td>Air</td> 
-        <td><%= @prices.i_air_v_cost %></td>
-        <td>Air</td>
-        <td><%= @prices.d_air_v_cost %></td>
-    </tr>
-    <tr>
-        <td>Land</td>
-        <td><%= @prices.i_land_v_cost %></td>
-        <td>Land</td>
-        <td><%= @prices.d_land_v_cost %></td>
-    </tr>
+	<tr>
+		<td>Air</td>
+		<td><%= @price.i_air_w_cost %></td>
+		<td>Air</td>
+		<td><%= @price.d_air_w_cost %></td>
+	</tr>
 
+	<tr>
+		<td>Land/Sea</td>
+		<td><%= @price.i_land_w_cost %></td>
+		<td>Land/Sea</td>
+		<td><%= @price.d_land_w_cost %></td>
+	</tr>
 
-    <tr class="pricing-desc">
-       <td>Weight Cost</td>
-       <td>$ Per Kilogram</td>
-     </tr>
+	<tr class="pricing-key" >
+		<td>Volume</td>
+		<td> NZD/cm³</td>
+		<td>Volume</td>
+		<td> NZD/cm³</td>
+	</tr>
 
-    <tr>
-        <td>Air</td>
-        <td><%= @prices.i_air_w_cost %></td>
-        <td>Air</td>
-        <td><%= @prices.d_air_w_cost %></td>
-    </tr>
-    
-    <tr>
-        <td>Land</td>
-        <td><%= @prices.i_land_w_cost %></td>
-        <td>Land</td>
-        <td><%= @prices.d_land_w_cost %></td>
-    </tr>
-    
-  </table>
+	<tr>
+		<td>Air</td>
+		<td><%= @price.i_air_v_cost %></td>
+		<td>Air</td>
+		<td><%= @price.d_air_v_cost %></td>
+	</tr>
+
+	<tr>
+		<td>Land/Sea</td>
+		<td><%= @price.i_land_v_cost %></td>
+		<td>Land/Sea</td>
+		<td><%= @price.d_land_v_cost %></td>
+	</tr>
+
+	<tr>
+		<td><div class="green-button"><%= link_to 'Edit', edit_price_path(@price) %></div></td>
+	</tr>
+
+</table>
+
+	
+</div>

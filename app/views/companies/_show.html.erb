@@ -1,15 +1,30 @@
-<div>
+<div class="partial-company">
 	<% company = Company.find(id) %>
-	<p>
-  	<strong>Company name:</strong>
-  	<%= company.company_name%>
-	</p>
-	<ol>
-	  	<% company.connections.each do |conn| %>
-	  	<li><%= conn.location_one + " to " + conn.location_two %></li>
-  		<li><%= "$ per g " + conn.weight_cost.to_s %>
-  		<li><%= "$ per cubic metres " + conn.volume_cost.to_s %> 
-  	<% end %>
-	</ol>
-	<%= link_to 'Edit', edit_company_path(company) %>
+
+	<table>
+		
+		<tr>
+			<td class="company-bold">Company Name</td>
+			<td><%= company.company_name%></td>
+		</tr>
+
+		<% company.connections.each do |conn| %>
+			<tr class="company-border">
+				<td class="company-bold">Connection</td>
+				<td><%= conn.location_one + " to " + conn.location_two %></td>
+			</tr>
+
+			<tr>
+				<td class="company-bold">weight cost</td>
+				<td><%= "$" + conn.weight_cost.to_s + "/g"%></td>
+			</tr>
+
+			<tr>
+				<td class="company-bold">volume cost</td>
+				<td><%= "$" + conn.volume_cost.to_s + "/cm³"%></td>
+			</tr>
+		<% end %>
+	</table>
+
+	<div class="edit-partial"><%= link_to 'Edit', edit_company_path(company) %></div>
 </div>

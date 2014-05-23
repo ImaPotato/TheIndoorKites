@@ -23,8 +23,9 @@
 }
 
 .companies-card table {
-	margin: 0px 10px 0px 0px;
+	margin: 0px 10px 0px 30px;
 	padding: 10px 5px 10px 5px;
+	border-collapse: collapse;
 }
 
 .connections-form table {
@@ -45,9 +46,32 @@
 	padding: 0px 0px 0px 100px;
 }
 
-.companies-card .companies-button {
-	padding: 0px 0px 0px 10px;
+.companies-card .companies-edit-button {
+	padding: 5px 0px 5px 10px;
+	text-align: left;
 }
+
+.companies-card .companies-view-button {
+	padding: 5px 40px 5px 10px;
+	border: solid;
+	border-width: 2px 0px 2px 0px;
+	border-color: #EDEDED;
+}
+
+.companies-card .companies-view-button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 400;
+	color: #000;
+}
+
+
+
+.companies-card .companies-view-button:hover {
+	background-color: rgba(64, 102, 24, 0.3);
+}
+
+
 
 .company-name {
 	padding: 0px 0px 20px 26px;
@@ -144,13 +168,46 @@
 .add-companies-button a {
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #000;
-	background-color: #CDCDCD;
-	padding: 5px 15px 5px 15px;
+	color: #fff;
+	background-color: rgba(64, 102, 24, 0.8);
+	padding: 5px 15px 5px 5px;
 	font-size: 15px;
 	font-weight: 400;
+	margin: 45px 0px 0px 20px;
 }
 
 .add-companies-button a:hover {
-	background-color: #DDDDDD;
+	background-color: rgba(64, 102, 24, 0.7);
+}
+
+.company-border {
+	border: solid;
+	border-color: #DFDFDF;
+	border-width: 2px 0px 0px 0px;
+}
+
+.company-bold {
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.edit-partial a {
+	padding: 5px 15px 5px 15px;
+	background-color: rgba(64, 102, 24, 0.8);
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	width: 35px;
+	text-decoration: none;
+	color: #fff;
+	margin-left: 30px;
+}
+
+.edit-partial a:hover {
+	background-color: rgba(64, 102, 24, 0.7);
+}
+
+.checkbox-table table {
+	border: none;
 }

@@ -3,4 +3,7 @@ class Route < ActiveRecord::Base
   has_many :mails
   accepts_nested_attributes_for :connections
   accepts_nested_attributes_for :mails
+
+  validates :name, presence: true
+
 end

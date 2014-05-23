@@ -2,19 +2,26 @@
 
 <h1>dashboard</h1>
 
-<table>   
-  <td>
-	<h3>Search</h3>   
+<table>
+	<tr>
+		<th>Search</th>
+		<th>notifications</th>
+	</tr>
+	  
+	<tr>
+		<td>
+			 
 	
-	<form action='/search'>
-		<input name="query" type="text" />
-		<input type='submit' value='Search' />
-	</form>
-  </td>
-  <td>
-	<%= render 'notifications' %>
-
-  </td>
+			<form action='/search'>
+				<input name="query" type="text" />
+				<input type='submit' value='Search' />
+			</form>
+  		</td> 
+  
+  		<td>
+			<%= render 'notifications' %>
+  		</td>
+  	</tr>
 
 </table>
 
