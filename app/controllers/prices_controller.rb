@@ -59,7 +59,7 @@ class PricesController < ApplicationController
         set_history(@price,HISTORY_EVENT_UPDATED)
         format.html { redirect_to @price, notice: 'Price was successfully updated.' }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit', notice: "Price couldn't be updated." }
       end
     end
   end

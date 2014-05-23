@@ -6,7 +6,7 @@ class RoutesController < ApplicationController
   include RoutesHelper
 
   def index
-    @routes = Route.all
+    @routes = Route.where("is_deleted = false OR is_deleted IS NULL")
   end
 
   # GET /routes/1
@@ -41,6 +41,8 @@ class RoutesController < ApplicationController
   # PATCH/PUT /routes/1
   # PATCH/PUT /routes/1.json
   def update
+    did_update = false
+
     respond_to do |format|
       connection_to_add =  Connection.find(params[:route][:connection])
 
@@ -53,6 +55,7 @@ class RoutesController < ApplicationController
       if @route.connections.count == 1 && is_connection_valid?(connection_to_add, @route.connections.last)
          @route.connections.push(connection_to_add)
          @route.update(route_params)
+         did_update = true
       elsif @route.connections.count > 1
           puts "\n\n\n\n\n\n\n\n******\n\n\n\n" + (@route.connections[@route.connections.count-2]).to_s + "\n\n\n****"
            puts "\n\n\n\n\n\n\n\n******\n\n\n\n" + (@route.connections.last).to_s + "\n\n\n****"
@@ -60,6 +63,7 @@ class RoutesController < ApplicationController
           if is_connection_valid_given_location?(connection_to_add, ancestor) 
               @route.connections.push(connection_to_add)
               @route.update(route_params)
+              did_update = true
           else
             puts "\n\n\n\n\**********\n\n\nAhh fuck"
           end
@@ -67,11 +71,11 @@ class RoutesController < ApplicationController
       end
     end
 
-      if 
+      if did_update
         format.html { redirect_to edit_route_path(@route.id), notice: 'Route was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit' , notice: "Unable to update route, invalid connection selected. A route must be a path! No loops, connected connections etc." }
         format.json { render json: @route.errors, status: :unprocessable_entity }
       end
     end
@@ -80,10 +84,20 @@ class RoutesController < ApplicationController
   # DELETE /routes/1
   # DELETE /routes/1.json
   def destroy
-    @route.destroy
-    respond_to do |format|
-      format.html { redirect_to routes_url }
-      format.json { head :no_content }
+    puts "\n\nn\\n\n\n\nnahhhhhhhh"
+    puts "\n\najffh: "  + (Mail.where("route_id = ? AND receive_date is NULL", @route.id).blank?).to_s
+ 
+
+    if Mail.where("route_id = ? AND receive_date is NULL", @route.id).blank?
+      @route[:is_deleted] = true
+      @route.save
+      respond_to do |format|
+        format.html { redirect_to routes_url, notice: "Route successfully removed from use." }
+      end
+    else
+      respond_to do |format|
+          format.html { redirect_to @route, notice: "Unable to delete route - there is still mail travelling on it" }
+      end 
     end
   end
 

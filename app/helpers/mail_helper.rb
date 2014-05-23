@@ -12,7 +12,7 @@ module MailHelper
 		to = mail.to
 		from = mail.from
 		# get all routes
-		Route.all.each do |route|
+		Route.where("is_deleted = false OR is_deleted IS NULL").each do |route|
 		# for all routes
 			to_found = false
 			from_found = false
