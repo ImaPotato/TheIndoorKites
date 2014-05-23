@@ -2,20 +2,17 @@
   <h1>transport companies</h1>
 
   <table>
-    <thead>
       <tr>
         <th>Company name</th>
+        <th></th>
       </tr>
-    </thead>
 
-    <tbody>
       <% @companies.each do |company| %>
         <tr>
-          <td class="companies-button"><%= link_to company.company_name, company %></td>
-          <td class="companies-button"><%= link_to 'Edit', edit_company_path(company) %></td>
+          <td class="companies-view-button"><%= link_to company.company_name, company %></td>
+          <td class="other-button"><%= link_to 'Edit', edit_company_path(company) %></td>
         </tr>
       <% end %>
-    </tbody>
   </table>
 
   <div class="add-companies-button"><%= link_to '+ Add Company', new_company_path %></div>
